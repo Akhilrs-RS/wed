@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FAF7F2;
+    color: #2D2424;
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+}
+
+/* Gold Metallic Foil Text Shimmer */
+.gold-text-shimmer {
+  background: linear-gradient(120deg, #96741B 0%, #D4AF37 25%, #FFF6DB 50%, #D4AF37 75%, #96741B 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Deckled paper edge shadow */
+.deckled-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+              0 20px 25px -5px rgba(74, 14, 23, 0.06),
+              inset 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+.deckled-card-gold {
+  box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.2),
+              inset 0 0 0 1.5px rgba(212, 175, 55, 0.5);
+}
+
+/* Vinyl rotation animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* Gentle floating animation */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #96741B;
+}
