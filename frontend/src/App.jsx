@@ -15,17 +15,17 @@ export default function App() {
   return (
     <div className="relative min-h-screen text-stone-900 font-sans selection:bg-gold-500/20 selection:text-imperial-900 overflow-x-hidden">
       {/* =========================================================================
-          HIGH VISIBILITY FIXED BACKGROUND (bd.jpg)
+          HIGH VISIBILITY FIXED BACKGROUND (bd.jpg) WITH FACE-ALIGNED POSITIONING
          ========================================================================= */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img
           src="/images/bd.jpg"
           alt="Wedding Backdrop"
-          className="w-full h-full object-cover object-center brightness-[0.92] contrast-[1.05]"
+          className="w-full h-full object-cover object-[center_28%] brightness-[0.95] contrast-[1.05]"
         />
-        {/* Transparent luxury overlay: allows bd.jpg to be clearly seen with crisp text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#FAF7F2]/30 to-black/40 pointer-events-none" />
-        <div className="absolute inset-0 bg-[#FAF7F2]/40 backdrop-blur-[0.2px] pointer-events-none" />
+        {/* Soft Transparent Vignette Overlay: lets bd.jpg show through with crisp readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-[#FAF7F2]/35 pointer-events-none" />
       </div>
 
       {/* Interactive Floating Petals & Gold Dust Canvas */}
@@ -37,7 +37,7 @@ export default function App() {
         <Navbar />
 
         <main>
-          {/* Hero Section */}
+          {/* Hero Section with Prominent bd.jpg Arch Showcase */}
           <Hero />
 
           {/* Story & Bride-Groom Portrait (bb.jpg) */}
