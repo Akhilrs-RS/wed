@@ -270,16 +270,16 @@ export default function TheDay() {
                 </div>
               </div>
 
-              {/* Right Image: v.jpg in Reception Frame */}
+              {/* Right Image: Auditorium in Reception Frame */}
               <div 
-                onClick={() => openVenuePhoto(reception.image || '/images/v.jpg')}
+                onClick={() => openVenuePhoto(reception.image || '/images/auditorium.jpg')}
                 className="lg:col-span-7 relative min-h-[360px] lg:min-h-full overflow-hidden group cursor-pointer"
                 title="Click to view full photo"
               >
                 <WeddingImage
-                  src={reception.image || '/images/v.jpg'}
+                  src={reception.image || '/images/auditorium.jpg'}
                   alt={reception.venue.name}
-                  className="w-full h-full min-h-[360px] lg:min-h-[500px] object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full min-h-[360px] lg:min-h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                   fallbackSrc="/images/bd.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-imperial-950/40 via-transparent to-imperial-950/20" />

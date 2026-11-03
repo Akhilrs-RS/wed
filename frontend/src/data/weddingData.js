@@ -64,7 +64,7 @@ export const weddingData = {
         fullAddress: "Uthiram Auditorium, Punniyam, Kanyakumari, Tamil Nadu",
         mapUrl: "https://maps.app.goo.gl/a1Dktufxz9B4JJK8A?g_st=awb"
       },
-      image: "/images/v.jpg"
+      image: "/images/auditorium.jpg"
     }
   },
 
