@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import { Send, CheckCircle2, Sparkles, MessageSquare, Heart } from 'lucide-react';
 import { weddingData } from '../data/weddingData';
+import ScrollReveal from './common/ScrollReveal';
 
 export default function RSVP() {
   const [formData, setFormData] = useState({
@@ -118,28 +119,31 @@ export default function RSVP() {
   };
 
   return (
-    <section id="rsvp" className="py-24 md:py-32 relative border-t border-gold-500/30">
+    <section id="rsvp" className="py-24 md:py-32 relative border-t border-gold-500/30 overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <span className="w-10 h-[1.5px] bg-gradient-to-r from-transparent to-gold-500" />
-            <span className="text-[11px] md:text-xs font-cinzel tracking-[0.3em] uppercase text-gold-700 font-semibold">
-              HONOR US WITH YOUR PRESENCE
-            </span>
-            <span className="w-10 h-[1.5px] bg-gradient-to-l from-transparent to-gold-500" />
-          </div>
+        <ScrollReveal animation="fade-up" duration={700}>
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <span className="w-10 h-[1.5px] bg-gradient-to-r from-transparent to-gold-500" />
+              <span className="text-[11px] md:text-xs font-cinzel tracking-[0.3em] uppercase text-gold-700 font-semibold">
+                HONOR US WITH YOUR PRESENCE
+              </span>
+              <span className="w-10 h-[1.5px] bg-gradient-to-l from-transparent to-gold-500" />
+            </div>
 
-          <h2 className="font-cinzel text-3xl sm:text-5xl text-imperial-900 font-medium tracking-tight">
-            RSVP &amp; Digital Guestbook
-          </h2>
-          <p className="mt-4 text-stone-700 font-serif italic text-base sm:text-lg">
-            “Kindly confirm your attendance and inscribe your warm blessings for the couple.”
-          </p>
-        </div>
+            <h2 className="font-cinzel text-3xl sm:text-5xl text-imperial-900 font-medium tracking-tight">
+              RSVP &amp; Digital Guestbook
+            </h2>
+            <p className="mt-4 text-stone-700 font-serif italic text-base sm:text-lg">
+              “Kindly confirm your attendance and inscribe your warm blessings for the couple.”
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Embossed Form Container with Glassmorphism */}
-        <div className="bg-white/90 backdrop-blur-md border-2 border-gold-500/50 p-8 sm:p-14 shadow-2xl deckled-card-gold relative mb-20">
+        <ScrollReveal animation="fade-up" delay={200} duration={800}>
+          <div className="bg-white/90 backdrop-blur-md border-2 border-gold-500/50 p-8 sm:p-14 shadow-2xl deckled-card-gold relative mb-20">
           {submitted ? (
             <div className="text-center py-12 animate-fade-in">
               <div className="w-16 h-16 bg-gold-100 text-gold-700 border border-gold-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
@@ -251,8 +255,10 @@ export default function RSVP() {
             </form>
           )}
         </div>
+      </ScrollReveal>
 
-        {/* Digital Guestbook Plaque Wall with Interactive Emoji Reactions */}
+      {/* Digital Guestbook Plaque Wall with Interactive Emoji Reactions */}
+      <ScrollReveal animation="fade-up" delay={300} duration={800}>
         <div className="max-w-2xl mx-auto">
           <div className="flex items-center justify-center space-x-2 text-gold-700 font-cinzel text-xs tracking-[0.25em] uppercase font-semibold mb-8">
             <MessageSquare size={16} />
@@ -300,7 +306,8 @@ export default function RSVP() {
             })}
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </ScrollReveal>
+    </div>
+  </section>
+);
 }

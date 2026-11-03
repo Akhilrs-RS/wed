@@ -31,6 +31,7 @@ export const weddingData = {
   },
 
   events: {
+    venueImage: "/images/v.jpg", // The Venues page image
     marriage: {
       title: "The Holy Matrimony",
       tagline: "Sacred Church Ceremony",
@@ -46,7 +47,7 @@ export const weddingData = {
         fullAddress: "Ummanoor Mar Semavoon, Desthuni Orthodox Church, Kottarakara, Kollam, Kerala",
         mapUrl: "https://maps.app.goo.gl/8TWkdEwqoSMSe7gJ6?g_st=ic"
       },
-      image: "/images/church.jpg"
+      image: "/images/v.jpg"
     },
     reception: {
       title: "Wedding Reception",
@@ -63,7 +64,7 @@ export const weddingData = {
         fullAddress: "Uthiram Auditorium, Punniyam, Kanyakumari, Tamil Nadu",
         mapUrl: "https://maps.app.goo.gl/a1Dktufxz9B4JJK8A?g_st=awb"
       },
-      image: "/images/auditorium.jpg"
+      image: "/images/v.jpg"
     }
   },
 

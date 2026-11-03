@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, Sparkles } from 'lucide-react';
 import { weddingData } from '../data/weddingData';
+import ScrollReveal from './common/ScrollReveal';
 
 export default function Countdown() {
   const targetDate = new Date(weddingData.events.marriage.fullDateString).getTime();
@@ -42,38 +43,46 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-[#FAF7F2] relative">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        {/* Title */}
-        <div className="inline-flex items-center space-x-2 text-gold-700 text-xs tracking-[0.3em] uppercase font-cinzel font-semibold mb-10">
-          <Sparkles size={14} className="text-gold-600" />
-          <span>THE CELESTIAL COUNTDOWN</span>
-          <Sparkles size={14} className="text-gold-600" />
-        </div>
+    <section className="py-20 md:py-28 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
+        <ScrollReveal animation="fade-up" duration={700}>
+          {/* Title */}
+          <div className="inline-flex items-center space-x-2 text-gold-700 text-xs tracking-[0.3em] uppercase font-cinzel font-semibold mb-10">
+            <Sparkles size={14} className="text-gold-600 animate-pulse" />
+            <span>THE CELESTIAL COUNTDOWN</span>
+            <Sparkles size={14} className="text-gold-600 animate-pulse" />
+          </div>
+        </ScrollReveal>
 
         {/* 4 Circular Golden Dials */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
-          {units.map((unit) => (
-            <div
+          {units.map((unit, index) => (
+            <ScrollReveal
               key={unit.label}
-              className="relative p-6 sm:p-8 bg-white/70 border-2 border-gold-500/30 rounded-full flex flex-col items-center justify-center aspect-square shadow-lg deckled-card hover:border-gold-500 transition-colors"
+              animation="zoom-in"
+              delay={index * 120}
+              duration={700}
             >
-              {/* Outer decorative ring */}
-              <div className="absolute inset-2 border border-gold-500/20 rounded-full pointer-events-none" />
+              <div className="relative p-6 sm:p-8 bg-white/85 backdrop-blur-md border-2 border-gold-500/40 rounded-full flex flex-col items-center justify-center aspect-square shadow-xl deckled-card hover:border-gold-500 hover:scale-105 transition-all duration-300">
+                {/* Outer decorative ring */}
+                <div className="absolute inset-2 border border-gold-500/20 rounded-full pointer-events-none" />
 
-              <span className="font-cinzel text-3xl sm:text-4xl md:text-5xl text-imperial-900 font-semibold leading-none">
-                {String(unit.value).padStart(2, '0')}
-              </span>
-              <span className="mt-2 text-[10px] sm:text-xs tracking-[0.25em] uppercase font-cinzel text-gold-700 font-medium">
-                {unit.label}
-              </span>
-            </div>
+                <span className="font-cinzel text-3xl sm:text-4xl md:text-5xl text-imperial-900 font-semibold leading-none">
+                  {String(unit.value).padStart(2, '0')}
+                </span>
+                <span className="mt-2 text-[10px] sm:text-xs tracking-[0.25em] uppercase font-cinzel text-gold-700 font-medium">
+                  {unit.label}
+                </span>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
-        <p className="mt-10 text-stone-600 font-pinyon text-2xl sm:text-3xl">
-          Until our sacred vows are pledged before God and loved ones
-        </p>
+        <ScrollReveal animation="fade-up" delay={500}>
+          <p className="mt-10 text-stone-700 font-pinyon text-2xl sm:text-3xl">
+            Until our sacred vows are pledged before God and loved ones
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );
