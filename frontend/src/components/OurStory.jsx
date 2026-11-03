@@ -78,10 +78,10 @@ export default function OurStory() {
               title="Click to view full photo"
             >
               <WeddingImage
-                src={couple.portrait}
+                src={couple.storyImage || "/images/bd.jpg"}
                 alt={`${couple.groom.fullName} & ${couple.bride.fullName}`}
-                className="w-full h-[480px] sm:h-[560px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                fallbackSrc="/images/bd.jpg"
+                className="w-full h-[480px] sm:h-[560px] object-cover object-[center_32%] transition-transform duration-700 group-hover:scale-105"
+                fallbackSrc="/images/bb.jpg"
               />
 
               {/* Hover Zoom Hint */}
@@ -152,7 +152,7 @@ export default function OurStory() {
               <X size={28} />
             </button>
             <img
-              src={couple.portrait}
+              src={couple.storyImage || "/images/bd.jpg"}
               alt="Robin & Benigla"
               className="max-h-[80vh] w-auto mx-auto object-contain"
             />

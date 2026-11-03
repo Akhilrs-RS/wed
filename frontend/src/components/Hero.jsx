@@ -63,16 +63,16 @@ export default function Hero() {
             <div className="lg:col-span-5 relative group order-1 lg:order-1">
               <div className="relative rounded-t-[180px] rounded-b-[24px] border-4 border-gold-500/70 p-3 bg-white/90 backdrop-blur-md shadow-2xl deckled-card-gold transition-all duration-500 group-hover:border-gold-500 group-hover:scale-[1.01]">
                 
-                {/* Image Container with Face-Centered Object Position (center 30%) */}
+                {/* Image Container with Face-Centered Object Position for bb.jpg */}
                 <div
                   onClick={() => setModalOpen(true)}
                   className="relative rounded-t-[170px] rounded-b-[18px] overflow-hidden h-[420px] sm:h-[480px] shadow-inner cursor-pointer"
                   title="Click to view full photo"
                 >
                   <img
-                    src="/images/bd.jpg"
+                    src={couple.heroImage || "/images/bb.jpg"}
                     alt="Robin Varghese & Benigla J L"
-                    className="w-full h-full object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-[center_38%] transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Subtle Gradient for Bottom Label */}
                   <div className="absolute inset-0 bg-gradient-to-t from-imperial-950/70 via-transparent to-transparent pointer-events-none" />
@@ -195,7 +195,7 @@ export default function Hero() {
               <X size={28} />
             </button>
             <img
-              src="/images/bd.jpg"
+              src={couple.heroImage || "/images/bb.jpg"}
               alt="Robin & Benigla"
               className="max-h-[80vh] w-auto mx-auto object-contain"
             />

@@ -18,6 +18,8 @@ export const weddingData = {
     },
     monogram: "R & B",
     alternativeMonogram: "B & R",
+    heroImage: "/images/bb.jpg", // First page / Hero image
+    storyImage: "/images/bd.jpg", // Story section image
     portrait: "/images/bb.jpg", // Bride & Groom portrait
     background: "/images/bd.jpg", // Page Background
     verse: {
