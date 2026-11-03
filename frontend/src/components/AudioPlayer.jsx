@@ -35,9 +35,20 @@ export default function AudioPlayer() {
 
       {/* Floating Royal Vintage Vinyl Medallion */}
       <div className="fixed bottom-6 right-6 z-50">
+        {/* Floating Musical Notes Animation when playing */}
+        {isPlaying && (
+          <div className="absolute -top-7 left-4 pointer-events-none flex space-x-3 text-gold-400 select-none">
+            <span className="animate-bounce text-sm drop-shadow">♪</span>
+            <span className="animate-bounce delay-150 text-xs drop-shadow">♫</span>
+            <span className="animate-bounce delay-300 text-base drop-shadow">♬</span>
+          </div>
+        )}
+
         <button
           onClick={togglePlay}
-          className="group relative flex items-center space-x-3 bg-gradient-to-r from-imperial-950 to-imperial-800 text-white px-4 py-3 border-2 border-gold-500 shadow-[0_4px_25px_rgba(212,175,55,0.4)] hover:shadow-[0_4px_30px_rgba(212,175,55,0.6)] transition-all duration-300 active:scale-95 deckled-card-gold"
+          className={`group relative flex items-center space-x-3 bg-gradient-to-r from-imperial-950 to-imperial-800 text-white px-4 py-3 border-2 border-gold-500 shadow-[0_4px_25px_rgba(212,175,55,0.4)] hover:shadow-[0_4px_30px_rgba(212,175,55,0.6)] transition-all duration-300 active:scale-95 deckled-card-gold ${
+            isPlaying ? 'ring-2 ring-gold-400/50' : ''
+          }`}
           aria-label={isPlaying ? 'Pause music' : 'Play royal wedding music'}
         >
           {/* Rotating Vinyl Disc */}

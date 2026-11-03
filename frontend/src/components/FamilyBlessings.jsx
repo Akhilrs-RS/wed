@@ -5,9 +5,9 @@ export default function FamilyBlessings() {
   const { groom, bride } = weddingData.couple;
 
   return (
-    <section id="parents" className="py-24 md:py-32 bg-[#FAF7F2] relative border-y border-gold-500/20">
+    <section id="parents" className="py-24 md:py-32 relative border-y border-gold-500/30">
       {/* Background Watermark Cross */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05]">
         <span className="font-cinzel text-[20rem] md:text-[32rem] text-gold-900 font-bold">
           ✝
         </span>
@@ -27,7 +27,7 @@ export default function FamilyBlessings() {
           <h2 className="font-cinzel text-3xl sm:text-5xl text-imperial-900 font-medium tracking-tight">
             Our Beloved Parents
           </h2>
-          <p className="mt-4 text-stone-600 font-serif italic text-base sm:text-lg">
+          <p className="mt-4 text-stone-700 font-serif italic text-base sm:text-lg">
             “With the prayers and lifelong blessings of those who raised us with devotion.”
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function FamilyBlessings() {
         {/* Dual Heraldic Lineage Tablets */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 max-w-5xl mx-auto">
           {/* GROOM'S LINEAGE TABLET */}
-          <div className="relative bg-white/80 border-2 border-gold-500/40 rounded-t-[80px] p-8 sm:p-12 deckled-card-gold transition-all duration-300 hover:shadow-2xl">
+          <div className="relative bg-white/85 backdrop-blur-md border-2 border-gold-500/50 rounded-t-[80px] p-8 sm:p-12 deckled-card-gold transition-all duration-300 hover:shadow-2xl hover:border-gold-500">
             {/* Top Seal */}
             <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-2 border-gold-500 bg-[#FAF7F2] flex items-center justify-center shadow-md">
               <span className="font-cinzel text-lg text-gold-700 font-bold">✝</span>
@@ -55,8 +55,8 @@ export default function FamilyBlessings() {
               <div className="w-16 h-[1.5px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mb-8" />
 
               <div className="space-y-6 text-stone-700">
-                <div className="p-4 bg-gold-50/50 border border-gold-500/20 rounded-none">
-                  <span className="block text-[10px] tracking-[0.2em] uppercase font-cinzel text-stone-400 font-semibold">
+                <div className="p-4 bg-gold-50/70 border border-gold-500/25 rounded-none">
+                  <span className="block text-[10px] tracking-[0.2em] uppercase font-cinzel text-stone-500 font-semibold">
                     Father
                   </span>
                   <p className="font-serif text-xl sm:text-2xl text-imperial-900 font-normal mt-1">
@@ -64,8 +64,8 @@ export default function FamilyBlessings() {
                   </p>
                 </div>
 
-                <div className="p-4 bg-gold-50/50 border border-gold-500/20 rounded-none">
-                  <span className="block text-[10px] tracking-[0.2em] uppercase font-cinzel text-stone-400 font-semibold">
+                <div className="p-4 bg-gold-50/70 border border-gold-500/25 rounded-none">
+                  <span className="block text-[10px] tracking-[0.2em] uppercase font-cinzel text-stone-500 font-semibold">
                     Mother
                   </span>
                   <p className="font-serif text-xl sm:text-2xl text-imperial-900 font-normal mt-1">
@@ -81,7 +81,7 @@ export default function FamilyBlessings() {
           </div>
 
           {/* BRIDE'S LINEAGE TABLET */}
-          <div className="relative bg-white/80 border-2 border-gold-500/40 rounded-t-[80px] p-8 sm:p-12 deckled-card-gold transition-all duration-300 hover:shadow-2xl">
+          <div className="relative bg-white/85 backdrop-blur-md border-2 border-gold-500/50 rounded-t-[80px] p-8 sm:p-12 deckled-card-gold transition-all duration-300 hover:shadow-2xl hover:border-gold-500">
             {/* Top Seal */}
             <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-2 border-gold-500 bg-[#FAF7F2] flex items-center justify-center shadow-md">
               <span className="font-cinzel text-lg text-gold-700 font-bold">✝</span>

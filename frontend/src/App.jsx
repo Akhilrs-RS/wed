@@ -9,21 +9,27 @@ import TheDay from './components/TheDay';
 import RSVP from './components/RSVP';
 import AudioPlayer from './components/AudioPlayer';
 import Footer from './components/Footer';
+import PetalCanvas from './components/common/PetalCanvas';
 
 export default function App() {
   return (
     <div className="relative min-h-screen text-stone-900 font-sans selection:bg-gold-500/20 selection:text-imperial-900 overflow-x-hidden">
-      {/* Fixed Background Image (bd.jpg) with Royal Translucent Luxury Overlay */}
+      {/* =========================================================================
+          HIGH VISIBILITY FIXED BACKGROUND (bd.jpg)
+         ========================================================================= */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img
           src="/images/bd.jpg"
           alt="Wedding Backdrop"
-          className="w-full h-full object-cover object-center opacity-85"
+          className="w-full h-full object-cover object-center brightness-[0.92] contrast-[1.05]"
         />
-        {/* Soft Alabaster & Champagne Warm Tint Overlay for Flawless Text Readability */}
-        <div className="absolute inset-0 bg-[#FAF7F2]/80 backdrop-blur-[0.5px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F2]/70 via-[#FAF7F2]/85 to-[#FAF7F2]/95" />
+        {/* Transparent luxury overlay: allows bd.jpg to be clearly seen with crisp text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#FAF7F2]/30 to-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-[#FAF7F2]/40 backdrop-blur-[0.2px] pointer-events-none" />
       </div>
+
+      {/* Interactive Floating Petals & Gold Dust Canvas */}
+      <PetalCanvas />
 
       {/* Main Content Layer */}
       <div className="relative z-10">
