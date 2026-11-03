@@ -17,7 +17,6 @@ export default function Navbar() {
   const navLinks = [
     { label: 'OUR STORY', href: '#story' },
     { label: 'THE FAMILIES', href: '#parents' },
-    { label: 'CELEBRATIONS', href: '#celebrations' },
     { label: 'THE VENUES', href: '#the-day' },
     { label: 'RSVP', href: '#rsvp' },
   ];

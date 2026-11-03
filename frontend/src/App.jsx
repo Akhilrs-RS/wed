@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import OurStory from './components/OurStory';
 import FamilyBlessings from './components/FamilyBlessings';
 import Countdown from './components/Countdown';
-import Celebrations from './components/Celebrations';
 import TheDay from './components/TheDay';
 import RSVP from './components/RSVP';
 import AudioPlayer from './components/AudioPlayer';
@@ -48,9 +47,6 @@ export default function App() {
 
           {/* Live Wedding Day Countdown */}
           <Countdown />
-
-          {/* Pre-Wedding Celebrations Cards */}
-          <Celebrations />
 
           {/* The Day: Church Holy Matrimony & Reception Auditorium */}
           <TheDay />

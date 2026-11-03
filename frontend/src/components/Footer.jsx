@@ -36,7 +36,6 @@ export default function Footer() {
         <div className="flex flex-wrap justify-center gap-6 text-[10px] tracking-[0.25em] uppercase font-cinzel text-stone-600 mb-12">
           <a href="#story" className="hover:text-gold-700 transition-colors">Our Story</a>
           <a href="#parents" className="hover:text-gold-700 transition-colors">The Families</a>
-          <a href="#celebrations" className="hover:text-gold-700 transition-colors">Celebrations</a>
           <a href="#the-day" className="hover:text-gold-700 transition-colors">Venues</a>
           <a href="#rsvp" className="hover:text-gold-700 transition-colors">RSVP</a>
         </div>
