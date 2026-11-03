@@ -1,31 +1,11 @@
-import React, { useState } from 'react';
-import { MapPin, Calendar, Clock, Navigation, ExternalLink, Sparkles, Copy, Check, Maximize2, X } from 'lucide-react';
+import React from 'react';
+import { MapPin, Calendar, Clock, Navigation, ExternalLink, Sparkles } from 'lucide-react';
 import { weddingData } from '../data/weddingData';
 import WeddingImage from './common/WeddingImage';
 import ScrollReveal from './common/ScrollReveal';
 
 export default function TheDay() {
   const { marriage, reception } = weddingData.events;
-  const [copiedMarriage, setCopiedMarriage] = useState(false);
-  const [copiedReception, setCopiedReception] = useState(false);
-  const [venueModalOpen, setVenueModalOpen] = useState(false);
-  const [modalImageSrc, setModalImageSrc] = useState('/images/v.jpg');
-
-  const copyAddress = (text, type) => {
-    navigator.clipboard?.writeText(text);
-    if (type === 'marriage') {
-      setCopiedMarriage(true);
-      setTimeout(() => setCopiedMarriage(false), 2000);
-    } else {
-      setCopiedReception(true);
-      setTimeout(() => setCopiedReception(false), 2000);
-    }
-  };
-
-  const openVenuePhoto = (imgSrc) => {
-    setModalImageSrc(imgSrc || '/images/v.jpg');
-    setVenueModalOpen(true);
-  };
 
   const createGoogleCalendarLink = (title, startIso, location, details) => {
     const startDate = new Date(startIso);
@@ -40,7 +20,7 @@ export default function TheDay() {
   };
 
   return (
-    <section id="the-day" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="the-day" className="py-24 md:py-32 bg-[#FAF7F2] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
         <ScrollReveal animation="fade-up" duration={700}>
@@ -56,7 +36,7 @@ export default function TheDay() {
             <h2 className="font-cinzel text-3xl sm:text-5xl md:text-6xl text-imperial-900 font-medium tracking-tight">
               The Holy Matrimony &amp; Reception
             </h2>
-            <p className="mt-4 text-stone-700 font-serif italic text-base sm:text-lg">
+            <p className="mt-4 text-stone-600 font-serif italic text-base sm:text-lg">
               “Two distinct moments of covenant, thanksgiving, and joy.”
             </p>
           </div>
@@ -66,33 +46,21 @@ export default function TheDay() {
             DESTINATION 1: The Holy Matrimony (Cathedral Card Featuring v.jpg)
            ========================================================================= */}
         <ScrollReveal animation="fade-up" delay={150} duration={850}>
-          <div className="mb-24 relative bg-white/90 border-2 border-gold-500/50 shadow-2xl deckled-card-gold overflow-hidden backdrop-blur-md transition-all duration-300 hover:border-gold-500">
+          <div className="mb-24 relative bg-white border-2 border-gold-500/40 shadow-2xl deckled-card-gold overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[500px]">
-              {/* Left Image: v.jpg with Face-Centered Focus */}
-              <div 
-                onClick={() => openVenuePhoto(marriage.image || '/images/v.jpg')}
-                className="lg:col-span-7 relative min-h-[360px] lg:min-h-full overflow-hidden group cursor-pointer"
-                title="Click to view full photo"
-              >
+              {/* Left Image: v.jpg */}
+              <div className="lg:col-span-7 relative min-h-[340px] lg:min-h-full overflow-hidden">
                 <WeddingImage
                   src={marriage.image || '/images/v.jpg'}
                   alt={marriage.venue.name}
-                  className="w-full h-full min-h-[360px] lg:min-h-[500px] object-cover object-[center_30%] transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full min-h-[340px] lg:min-h-[500px] object-cover object-[center_30%]"
                   fallbackSrc="/images/bd.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-imperial-950/40 via-transparent to-imperial-950/20" />
                 
                 {/* Badge */}
-                <div className="absolute top-6 left-6 inline-flex items-center space-x-2 px-4 py-1.5 bg-black/70 backdrop-blur-md border border-gold-400/60 text-gold-200 text-[10px] tracking-[0.25em] uppercase font-cinzel">
+                <div className="absolute top-6 left-6 inline-flex items-center space-x-2 px-4 py-1.5 bg-black/60 backdrop-blur-md border border-gold-400/50 text-gold-200 text-[10px] tracking-[0.25em] uppercase font-cinzel">
                   <span>✝ SACRED CEREMONY</span>
-                </div>
-
-                {/* Click-to-Zoom Hover Hint */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="px-4 py-2 bg-black/70 backdrop-blur-sm text-gold-200 text-xs font-cinzel tracking-wider rounded-full flex items-center space-x-2 border border-gold-400 shadow-lg">
-                    <Maximize2 size={13} />
-                    <span>VIEW FULL PHOTO</span>
-                  </span>
                 </div>
               </div>
 
@@ -123,7 +91,7 @@ export default function TheDay() {
                   </div>
 
                   {/* Venue Details */}
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-start space-x-2 text-gold-400">
                       <MapPin size={18} className="shrink-0 mt-1" />
                       <div>
@@ -136,24 +104,15 @@ export default function TheDay() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Interactive Copy Address */}
-                  <button
-                    onClick={() => copyAddress(marriage.venue.fullAddress, 'marriage')}
-                    className="inline-flex items-center space-x-2 text-[11px] text-gold-300 hover:text-white font-mono bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded transition-colors mb-6 border border-gold-500/20"
-                  >
-                    {copiedMarriage ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
-                    <span>{copiedMarriage ? 'Address Copied! ✓' : 'Copy Venue Address'}</span>
-                  </button>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-wrap gap-3 pt-4 border-t border-gold-500/20">
+                <div className="flex flex-col space-y-3 pt-4 border-t border-gold-500/20">
                   <a
                     href={marriage.venue.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-imperial-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 hover:from-gold-200 hover:to-gold-400 px-6 py-3.5 shadow-lg transition-all hover:scale-105 active:scale-95"
+                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-imperial-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 hover:from-gold-200 hover:to-gold-400 px-6 py-3.5 shadow-lg transition-all border border-gold-400 w-fit"
                   >
                     <Navigation size={14} />
                     <span>NAVIGATE GOOGLE MAPS</span>
@@ -169,7 +128,7 @@ export default function TheDay() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-gold-200 hover:text-white px-4 py-3.5 border border-gold-500/40 hover:border-gold-300 transition-colors"
+                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-gold-200 hover:text-white px-4 py-3 border border-gold-500/40 hover:border-gold-300 transition-colors w-fit"
                   >
                     <Calendar size={14} />
                     <span>ADD TO CALENDAR</span>
@@ -181,19 +140,19 @@ export default function TheDay() {
         </ScrollReveal>
 
         {/* =========================================================================
-            DESTINATION 2: The Wedding Reception (Grand Banquet Gateway)
+            DESTINATION 2: The Wedding Reception (EXACT MATCH TO SCREENSHOT)
            ========================================================================= */}
         <ScrollReveal animation="fade-up" delay={250} duration={850}>
-          <div className="relative bg-white/90 border-2 border-gold-500/50 shadow-2xl deckled-card-gold overflow-hidden backdrop-blur-md transition-all duration-300 hover:border-gold-500">
+          <div className="relative bg-white border-2 border-gold-500/40 shadow-2xl deckled-card-gold overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[500px]">
               {/* Left Content Card */}
-              <div className="lg:col-span-5 bg-[#FAF7F2]/95 p-8 sm:p-12 md:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gold-500/40">
+              <div className="lg:col-span-5 bg-[#FAF7F2] p-8 sm:p-12 md:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-gold-500/40">
                 <div>
                   <span className="text-[11px] tracking-[0.3em] uppercase font-cinzel text-gold-700 font-semibold block mb-2">
                     AND THEN WE CELEBRATE
                   </span>
-                  <h3 className="font-cinzel text-3xl sm:text-4xl text-imperial-900 font-medium mb-1">
-                    {reception.title}
+                  <h3 className="font-cinzel text-3xl sm:text-4xl text-imperial-900 font-medium mb-1 leading-tight">
+                    WEDDING<br />RECEPTION
                   </h3>
                   <p className="font-pinyon text-2xl text-gold-700 mb-6">
                     An Evening of Festive Banquet &amp; Music
@@ -216,7 +175,7 @@ export default function TheDay() {
                   </div>
 
                   {/* Venue Details */}
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-3 mb-8">
                     <div className="flex items-start space-x-2 text-gold-700">
                       <MapPin size={18} className="shrink-0 mt-1" />
                       <div>
@@ -229,24 +188,15 @@ export default function TheDay() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Interactive Copy Address */}
-                  <button
-                    onClick={() => copyAddress(reception.venue.fullAddress, 'reception')}
-                    className="inline-flex items-center space-x-2 text-[11px] text-stone-600 hover:text-imperial-900 font-mono bg-stone-100 hover:bg-stone-200 px-3 py-1.5 rounded transition-colors mb-6 border border-stone-200"
-                  >
-                    {copiedReception ? <Check size={13} className="text-emerald-600" /> : <Copy size={13} />}
-                    <span>{copiedReception ? 'Address Copied! ✓' : 'Copy Venue Address'}</span>
-                  </button>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-wrap gap-3 pt-4 border-t border-gold-500/20">
+                {/* Action Buttons - Stacked vertically exactly as in screenshot */}
+                <div className="flex flex-col space-y-3 pt-4 border-t border-gold-500/20">
                   <a
                     href={reception.venue.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-white bg-imperial-800 hover:bg-imperial-900 px-6 py-3.5 shadow-lg transition-all border border-gold-500 hover:scale-105 active:scale-95"
+                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-white bg-imperial-800 hover:bg-imperial-900 px-6 py-3.5 shadow-lg transition-all border border-gold-500 w-fit"
                   >
                     <Navigation size={14} className="text-gold-300" />
                     <span>NAVIGATE GOOGLE MAPS</span>
@@ -262,7 +212,7 @@ export default function TheDay() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-imperial-800 hover:text-gold-700 px-4 py-3.5 border border-gold-500/40 transition-colors"
+                    className="inline-flex items-center space-x-2 text-xs tracking-[0.2em] uppercase font-cinzel font-semibold text-imperial-800 hover:text-gold-700 px-4 py-3 border border-gold-500/40 hover:border-gold-500 transition-colors bg-white w-fit"
                   >
                     <Calendar size={14} />
                     <span>ADD TO CALENDAR</span>
@@ -270,66 +220,25 @@ export default function TheDay() {
                 </div>
               </div>
 
-              {/* Right Image: Auditorium in Reception Frame */}
-              <div 
-                onClick={() => openVenuePhoto(reception.image || '/images/auditorium.jpg')}
-                className="lg:col-span-7 relative min-h-[360px] lg:min-h-full overflow-hidden group cursor-pointer"
-                title="Click to view full photo"
-              >
+              {/* Right Image: Auditorium - Exactly as in screenshot */}
+              <div className="lg:col-span-7 relative min-h-[340px] lg:min-h-full overflow-hidden">
                 <WeddingImage
                   src={reception.image || '/images/auditorium.jpg'}
                   alt={reception.venue.name}
-                  className="w-full h-full min-h-[360px] lg:min-h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full min-h-[340px] lg:min-h-[500px] object-cover"
                   fallbackSrc="/images/bd.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-imperial-950/40 via-transparent to-imperial-950/20" />
                 
                 {/* Badge */}
-                <div className="absolute top-6 right-6 inline-flex items-center space-x-2 px-4 py-1.5 bg-black/70 backdrop-blur-md border border-gold-400/60 text-gold-200 text-[10px] tracking-[0.25em] uppercase font-cinzel">
+                <div className="absolute top-6 right-6 inline-flex items-center space-x-2 px-4 py-1.5 bg-black/60 backdrop-blur-md border border-gold-400/50 text-gold-200 text-[10px] tracking-[0.25em] uppercase font-cinzel">
                   <span>🥂 GRAND RECEPTION BANQUET</span>
-                </div>
-
-                {/* Click-to-Zoom Hover Hint */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="px-4 py-2 bg-black/70 backdrop-blur-sm text-gold-200 text-xs font-cinzel tracking-wider rounded-full flex items-center space-x-2 border border-gold-400 shadow-lg">
-                    <Maximize2 size={13} />
-                    <span>VIEW FULL PHOTO</span>
-                  </span>
                 </div>
               </div>
             </div>
           </div>
         </ScrollReveal>
       </div>
-
-      {/* Lightbox Modal for Venues Photo (v.jpg) */}
-      {venueModalOpen && (
-        <div
-          onClick={() => setVenueModalOpen(false)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="relative max-w-2xl max-h-[90vh] bg-stone-900 border-2 border-gold-500 p-2 shadow-2xl"
-          >
-            <button
-              onClick={() => setVenueModalOpen(false)}
-              className="absolute -top-12 right-0 text-white hover:text-gold-400 p-2"
-              aria-label="Close"
-            >
-              <X size={28} />
-            </button>
-            <img
-              src={modalImageSrc}
-              alt="Robin & Benigla Venue Celebration"
-              className="max-h-[80vh] w-auto mx-auto object-contain"
-            />
-            <div className="text-center py-3 text-gold-300 font-cinzel text-xs tracking-widest">
-              ROBIN VARGHESE &amp; BENIGLA J L • SACRED VENUES &amp; CELEBRATION
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
