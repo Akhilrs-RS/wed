@@ -1,14 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import ReceptionNavbar from '../components/reception/ReceptionNavbar';
-import ReceptionHero from '../components/reception/ReceptionHero';
-import OurStory from '../components/OurStory';
-import ReceptionParents from '../components/reception/ReceptionParents';
-import ReceptionCountdown from '../components/reception/ReceptionCountdown';
-import ReceptionVenue from '../components/reception/ReceptionVenue';
-import ReceptionTimeline from '../components/reception/ReceptionTimeline';
-import ReceptionGallery from '../components/reception/ReceptionGallery';
-import ReceptionRSVP from '../components/reception/ReceptionRSVP';
-import ReceptionFooter from '../components/reception/ReceptionFooter';
+import GalaNavbar from '../components/reception/GalaNavbar';
+import GalaHero from '../components/reception/GalaHero';
+import GalaProgram from '../components/reception/GalaProgram';
+import GalaHeritage from '../components/reception/GalaHeritage';
+import GalaVenue from '../components/reception/GalaVenue';
+import GalaGallery from '../components/reception/GalaGallery';
+import GalaRSVP from '../components/reception/GalaRSVP';
+import GalaFooter from '../components/reception/GalaFooter';
 import WaxSealEnvelope from '../components/reception/WaxSealEnvelope';
 import VelvetMusicButton from '../components/reception/VelvetMusicButton';
 import FloatingPetals from '../components/reception/FloatingPetals';
@@ -68,7 +66,8 @@ export default function ReceptionApp({ navigate }) {
   };
 
   return (
-    <div className="relative min-h-screen text-stone-900 font-sans selection:bg-gold-500/20 selection:text-imperial-900 overflow-x-hidden">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#180307] via-[#24060E] to-[#120205] text-stone-100 font-sans selection:bg-gold-500/30 selection:text-gold-200 overflow-x-hidden">
+      
       {/* 3D Wax-Sealed Opening Envelope Ceremony */}
       <WaxSealEnvelope
         isOpen={showEnvelope}
@@ -76,59 +75,51 @@ export default function ReceptionApp({ navigate }) {
         onMusicStart={handleMusicStart}
       />
 
-      {/* Fixed Atmospheric Background (bd.jpg) */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <img
-          src="/images/bd.jpg"
-          alt="Wedding Backdrop"
-          className="w-full h-full object-cover object-[center_28%] brightness-[0.95] contrast-[1.05]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none" />
-        <div className="absolute inset-0 bg-[#FAF7F2]/35 pointer-events-none" />
+      {/* Atmospheric Starry Nocturne Canvas Overlay */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Soft Radial Vignettes */}
+        <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-amber-500/10 via-transparent to-transparent opacity-40 blur-3xl" />
+        <div className="absolute top-1/2 left-0 w-96 h-96 bg-imperial-800/20 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-gold-600/10 rounded-full blur-3xl opacity-30" />
       </div>
 
-      {/* Realistic Falling Petals & Golden Leaf Engine */}
+      {/* Realistic Falling Rose Petals & Golden Leaf Particles */}
       <FloatingPetals />
 
       {/* Main Content Layer */}
       <div className="relative z-10">
-        {/* Reception Navigation */}
-        <ReceptionNavbar navigate={navigate} />
+        
+        {/* Bespoke Floating Glassmorphic Pill Header */}
+        <GalaNavbar navigate={navigate} />
 
         <main>
-          {/* Reception Hero - Dec 30, 2026 at Uthiram Auditorium */}
-          <ReceptionHero />
+          {/* 1. Starlight Gala Hero with Integrated Live Countdown */}
+          <GalaHero />
 
-          {/* Couple's Story & Portrait (s.jpg) */}
-          <OurStory />
+          {/* 2. 4-Stage Illuminated Evening Gala Program */}
+          <GalaProgram />
 
-          {/* Beloved Families Lineage (Punniyam & Kottarakara) */}
-          <ReceptionParents />
+          {/* 3. Nuptial Heritage: Kottarakara meets Punniyam (Zero Duplicate Components) */}
+          <GalaHeritage />
 
-          {/* Live Reception Countdown to 30 Dec 2026, 5:30 PM */}
-          <ReceptionCountdown />
+          {/* 4. The Grand Pavilion: Uthiram Auditorium Showcase */}
+          <GalaVenue />
 
-          {/* Screenshot-Matched Reception Venue Card (Uthiram Auditorium) */}
-          <ReceptionVenue />
+          {/* 5. 11-Photo Captured Moments Gallery & Modal Lightbox */}
+          <GalaGallery />
 
-          {/* Evening Programme / Schedule of Events (4 Stages) */}
-          <ReceptionTimeline />
-
-          {/* 11-Photo Captured Moments Gallery & Modal Lightbox */}
-          <ReceptionGallery />
-
-          {/* Dedicated Reception RSVP & Wishes Guestbook */}
-          <ReceptionRSVP />
+          {/* 6. Digital Champagne Toast Wall & Reception RSVP */}
+          <GalaRSVP />
         </main>
 
-        {/* Screenshot-Matched Floating Velvet Music Button ("PLAY MELODY / Tap to Listen") */}
+        {/* Floating Velvet Music Brooch ("PLAY MELODY / Tap to Listen") */}
         <VelvetMusicButton
           isPlaying={isPlaying}
           onToggleAudio={handleToggleAudio}
         />
 
-        {/* Reception Footer with Re-open Royal Envelope */}
-        <ReceptionFooter
+        {/* Gala Footer with Re-open Royal Envelope */}
+        <GalaFooter
           navigate={navigate}
           onOpenEnvelope={() => setShowEnvelope(true)}
         />
