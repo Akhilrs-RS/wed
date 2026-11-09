@@ -114,10 +114,10 @@ export default function Navbar({ navigate }) {
           {navigate && (
             <button
               onClick={() => navigate('/reception')}
-              className="group inline-flex items-center space-x-1 px-3 py-1 bg-gold-100/60 hover:bg-gold-200/80 text-gold-900 border border-gold-400/60 text-[10px] font-cinzel tracking-wider uppercase font-semibold transition-all shadow-sm"
+              className="group inline-flex items-center space-x-1 px-3 py-1 bg-gold-100/60 hover:bg-gold-200/80 text-gold-900 border border-gold-400/60 text-[10px] font-cinzel tracking-wider uppercase font-semibold transition-all shadow-sm cursor-pointer"
               title="Open dedicated Wedding Reception invitation page"
             >
-              <span>RECEPTION ONLY</span>
+              <span>RECEPTION</span>
               <ArrowRight size={11} className="text-gold-700 transition-transform group-hover:translate-x-0.5" />
             </button>
           )}
@@ -162,9 +162,9 @@ export default function Navbar({ navigate }) {
                     setMobileMenuOpen(false);
                     navigate('/reception');
                   }}
-                  className="w-full py-2.5 text-center text-xs tracking-wider uppercase font-cinzel text-gold-900 bg-gold-100/80 border border-gold-400 font-bold"
+                  className="w-full py-2.5 text-center text-xs tracking-wider uppercase font-cinzel text-gold-900 bg-gold-100/80 border border-gold-400 font-bold cursor-pointer"
                 >
-                  VIEW RECEPTION ONLY (DEC 30) →
+                  VIEW RECEPTION (DEC 30) →
                 </button>
               </div>
             )}
