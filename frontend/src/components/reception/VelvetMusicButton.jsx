@@ -29,13 +29,24 @@ export default function VelvetMusicButton({ isPlaying, onToggleAudio }) {
         </div>
 
         {/* Text Lockup (Matching Screenshot Exactly) */}
-        <div className="text-left font-cinzel leading-tight pr-1">
-          <div className="text-[10px] sm:text-[11px] tracking-[0.2em] uppercase font-semibold text-gold-300 group-hover:text-gold-200 transition-colors">
-            {isPlaying ? 'PAUSE MELODY' : 'PLAY MELODY'}
+        <div className="text-left font-cinzel leading-tight pr-1 flex items-center space-x-2">
+          <div>
+            <div className="text-[10px] sm:text-[11px] tracking-[0.2em] uppercase font-semibold text-gold-300 group-hover:text-gold-200 transition-colors">
+              {isPlaying ? 'PAUSE MELODY' : 'PLAY MELODY'}
+            </div>
+            <div className="text-[8px] sm:text-[9px] tracking-wider text-gold-400/80 font-sans italic">
+              {isPlaying ? 'Now Playing' : 'Tap to Listen'}
+            </div>
           </div>
-          <div className="text-[8px] sm:text-[9px] tracking-wider text-gold-400/80 font-sans italic">
-            {isPlaying ? 'Now Playing' : 'Tap to Listen'}
-          </div>
+
+          {/* Dancing Equalizer Wave Bars when playing */}
+          {isPlaying && (
+            <div className="flex items-end space-x-0.5 h-3.5 pb-0.5">
+              <span className="w-0.5 bg-gold-400 rounded-full animate-wave-1" />
+              <span className="w-0.5 bg-gold-300 rounded-full animate-wave-2" />
+              <span className="w-0.5 bg-gold-400 rounded-full animate-wave-3" />
+            </div>
+          )}
         </div>
       </button>
     </div>

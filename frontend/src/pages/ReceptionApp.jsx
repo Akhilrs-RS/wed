@@ -10,6 +10,7 @@ import GalaFooter from '../components/reception/GalaFooter';
 import WaxSealEnvelope from '../components/reception/WaxSealEnvelope';
 import VelvetMusicButton from '../components/reception/VelvetMusicButton';
 import FloatingPetals from '../components/reception/FloatingPetals';
+import ChampagneBokeh from '../components/reception/ChampagneBokeh';
 import { weddingData } from '../data/weddingData';
 
 export default function ReceptionApp({ navigate }) {
@@ -82,6 +83,9 @@ export default function ReceptionApp({ navigate }) {
         <div className="absolute top-1/2 left-0 w-96 h-96 bg-imperial-800/20 rounded-full blur-3xl opacity-30" />
         <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-gold-600/10 rounded-full blur-3xl opacity-30" />
       </div>
+
+      {/* Rising Golden Champagne Bokeh & Living Stardust */}
+      <ChampagneBokeh />
 
       {/* Realistic Falling Rose Petals & Golden Leaf Particles */}
       <FloatingPetals />

@@ -64,3 +64,4 @@ export default function GalaFooter({ navigate, onOpenEnvelope }) {
     </footer>
   );
 }
+

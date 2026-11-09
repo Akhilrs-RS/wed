@@ -105,7 +105,7 @@ export default function GalaVenue() {
                     href={receptionSite.venue.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-gradient-to-r from-imperial-900 to-imperial-800 hover:from-imperial-800 hover:to-imperial-700 text-gold-200 border border-gold-400 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-lg transition-all hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-gradient-to-r from-imperial-900 to-imperial-800 hover:from-imperial-800 hover:to-imperial-700 text-gold-200 border border-gold-400 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-lg transition-all hover:scale-105 active:scale-95 gold-sheen-sweep"
                   >
                     <Navigation size={14} className="text-gold-400" />
                     <span>GOOGLE MAPS</span>
@@ -121,7 +121,7 @@ export default function GalaVenue() {
                     )}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-imperial-950/90 hover:bg-black text-gold-300 border border-gold-500/50 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-sm transition-all hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-imperial-950/90 hover:bg-black text-gold-300 border border-gold-500/50 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-sm transition-all hover:scale-105 active:scale-95 gold-sheen-sweep"
                   >
                     <Calendar size={14} className="text-gold-400" />
                     <span>ADD TO CALENDAR</span>
@@ -135,3 +135,4 @@ export default function GalaVenue() {
     </section>
   );
 }
+

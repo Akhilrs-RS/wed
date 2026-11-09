@@ -40,6 +40,9 @@ export default function GalaProgram() {
 
   return (
     <section id="program" className="py-24 sm:py-32 relative text-white overflow-hidden">
+      {/* Background Central Timeline Glowing Filament */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-48 bottom-20 w-[1.5px] bg-gradient-to-b from-transparent via-gold-400/50 to-transparent animate-timeline-pulse pointer-events-none hidden lg:block" />
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Section Header */}
@@ -71,12 +74,16 @@ export default function GalaProgram() {
                 delay={idx * 100}
                 duration={750}
               >
-                <div className="group relative p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#24060E]/90 to-[#180308]/90 border border-gold-400/40 hover:border-gold-400 shadow-xl hover:shadow-[0_10px_35px_rgba(212,175,55,0.25)] transition-all duration-300 hover:-translate-y-1 backdrop-blur-md">
+                <div className="group relative p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#24060E]/90 to-[#180308]/90 border border-gold-400/40 hover:border-gold-300 shadow-xl hover:shadow-[0_12px_45px_rgba(212,175,55,0.35)] transition-all duration-500 hover:-translate-y-1.5 backdrop-blur-md gold-sheen-sweep">
                   
+                  {/* Glowing Corner Starlight Accent */}
+                  <div className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-gold-400/40 opacity-0 group-hover:opacity-100 transition-opacity" />
+
                   {/* Top Badge & Time */}
                   <div className="flex items-center justify-between mb-4 pb-3 border-b border-gold-500/25">
-                    <span className="text-[10px] font-cinzel tracking-[0.2em] uppercase text-gold-400/90 font-semibold">
-                      {stage.badge}
+                    <span className="text-[10px] font-cinzel tracking-[0.2em] uppercase text-gold-400/90 font-semibold flex items-center space-x-1.5">
+                      <Sparkles size={11} className="text-gold-400 animate-pulse" />
+                      <span>{stage.badge}</span>
                     </span>
                     <div className="flex items-center space-x-1.5 text-gold-300 font-cinzel text-sm sm:text-base font-bold">
                       <Clock size={14} className="text-gold-400" />
@@ -86,8 +93,8 @@ export default function GalaProgram() {
 
                   {/* Icon & Title */}
                   <div className="flex items-start space-x-4">
-                    <div className="w-11 h-11 rounded-full bg-imperial-950 border border-gold-400/60 flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 transition-transform">
-                      <Icon size={18} className="text-gold-300" />
+                    <div className="w-11 h-11 rounded-full bg-imperial-950 border border-gold-400/60 flex items-center justify-center shrink-0 shadow-inner group-hover:scale-110 group-hover:border-gold-300 transition-all duration-300">
+                      <Icon size={18} className="text-gold-300 group-hover:text-gold-200" />
                     </div>
 
                     <div className="space-y-1">
@@ -113,3 +120,4 @@ export default function GalaProgram() {
     </section>
   );
 }
+

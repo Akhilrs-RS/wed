@@ -44,12 +44,23 @@ export default function GalaHero() {
   const triggerHeroBlessing = () => {
     setBlessingSent(true);
     try {
+      // Phase 1: Rapid champagne-gold vertical burst
       confetti({
-        particleCount: 85,
-        spread: 90,
+        particleCount: 55,
+        spread: 60,
         origin: { y: 0.65 },
-        colors: ['#D4AF37', '#9E2A2B', '#FAF6F0', '#E6C687', '#3B0E17', '#F5D061']
+        colors: ['#F5D061', '#D4AF37', '#FFFDF9', '#E6C687']
       });
+
+      // Phase 2: Staggered cascading shower with ruby & stardust
+      setTimeout(() => {
+        confetti({
+          particleCount: 65,
+          spread: 105,
+          origin: { y: 0.55 },
+          colors: ['#D4AF37', '#9E2A2B', '#3B0E17', '#FAF6F0', '#F5D061']
+        });
+      }, 180);
     } catch (e) {
       console.log('Confetti error:', e);
     }
@@ -102,7 +113,7 @@ export default function GalaHero() {
              ===================================================================== */}
           <div className="inline-flex items-center justify-center relative mb-6">
             {/* Pulsing Starlight Halo */}
-            <div className="absolute -inset-3 rounded-full border-2 border-gold-400/40 animate-pulse pointer-events-none" />
+            <div className="absolute -inset-3 rounded-full border-2 border-gold-400/40 animate-pulse-gold pointer-events-none" />
 
             {/* Latin Cross Crest */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-2 border-gold-400 bg-imperial-950 flex items-center justify-center shadow-lg z-20">
@@ -194,9 +205,12 @@ export default function GalaHero() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-2 sm:p-3 rounded-xl bg-imperial-950/90 border border-gold-500/30 text-center shadow-inner"
+                    className="p-2 sm:p-3 rounded-xl bg-imperial-950/90 border border-gold-500/30 text-center shadow-inner overflow-hidden"
                   >
-                    <div className="font-cinzel text-2xl sm:text-4xl font-bold text-gold-300 leading-none">
+                    <div
+                      key={`${item.label}-${item.value}`}
+                      className="font-cinzel text-2xl sm:text-4xl font-bold text-gold-300 leading-none animate-digit-tick"
+                    >
                       {String(item.value).padStart(2, '0')}
                     </div>
                     <div className="font-cinzel text-[9px] sm:text-[10px] tracking-widest text-gold-400/70 uppercase mt-1">
@@ -218,7 +232,7 @@ export default function GalaHero() {
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2">
             <button
               onClick={triggerHeroBlessing}
-              className="group relative inline-flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-imperial-900 to-imperial-800 hover:from-imperial-800 hover:to-imperial-700 text-gold-200 font-cinzel text-xs tracking-[0.2em] uppercase font-semibold border border-gold-400 shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+              className="group relative inline-flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-imperial-900 to-imperial-800 hover:from-imperial-800 hover:to-imperial-700 text-gold-200 font-cinzel text-xs tracking-[0.2em] uppercase font-semibold border border-gold-400 shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gold-sheen-sweep"
             >
               <Heart
                 size={14}
@@ -233,7 +247,7 @@ export default function GalaHero() {
               href={receptionSite.venue.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-5 py-3.5 bg-[#2B0812]/90 hover:bg-imperial-800 text-gold-200 border border-gold-400/60 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-md transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center space-x-2 px-5 py-3.5 bg-[#2B0812]/90 hover:bg-imperial-800 text-gold-200 border border-gold-400/60 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-md transition-all hover:scale-105 active:scale-95 gold-sheen-sweep"
             >
               <Navigation size={13} className="text-gold-400" />
               <span>NAVIGATE VENUE</span>
@@ -249,7 +263,7 @@ export default function GalaHero() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-5 py-3.5 bg-imperial-950/90 hover:bg-black text-gold-300 border border-gold-400/50 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-md transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center space-x-2 px-5 py-3.5 bg-imperial-950/90 hover:bg-black text-gold-300 border border-gold-400/50 font-cinzel text-xs tracking-[0.15em] uppercase font-semibold shadow-md transition-all hover:scale-105 active:scale-95 gold-sheen-sweep"
             >
               <Calendar size={13} className="text-gold-400" />
               <span>ADD TO CALENDAR</span>
@@ -303,3 +317,4 @@ export default function GalaHero() {
     </section>
   );
 }
+
