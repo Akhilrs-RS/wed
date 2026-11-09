@@ -13,6 +13,7 @@ export default function ReceptionNavbar({ navigate }) {
     { label: 'THE FAMILIES', href: '#parents', id: 'parents' },
     { label: 'THE VENUE', href: '#venue', id: 'venue' },
     { label: 'SCHEDULE', href: '#schedule', id: 'schedule' },
+    { label: 'GALLERY', href: '#gallery', id: 'gallery' },
     { label: 'RSVP', href: '#rsvp', id: 'rsvp' },
   ];
 
@@ -168,3 +169,4 @@ export default function ReceptionNavbar({ navigate }) {
     </header>
   );
 }
+

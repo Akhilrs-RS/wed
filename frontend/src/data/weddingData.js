@@ -134,6 +134,20 @@ export const weddingData = {
     }
   },
 
+  gallery: [
+    { id: 1, src: "/images/gallery/moment-1.jpg", caption: "Robin & Benigla", subtitle: "Together in Love", alt: "Couple portrait" },
+    { id: 2, src: "/images/gallery/moment-2.jpg", caption: "Sweet Moments", subtitle: "Cherished Memories", alt: "Memories" },
+    { id: 3, src: "/images/gallery/moment-3.jpg", caption: "Our Journey Begins", subtitle: "Bound by Grace", alt: "Special moment" },
+    { id: 4, src: "/images/gallery/moment-4.jpg", caption: "Grace & Elegance", subtitle: "A Timeless Bond", alt: "Wedding moments" },
+    { id: 5, src: "/images/gallery/moment-5.jpg", caption: "Smiles & Joy", subtitle: "Pure Happiness", alt: "Candid moment" },
+    { id: 6, src: "/images/gallery/moment-6.jpg", caption: "Forever Together", subtitle: "Two Hearts as One", alt: "Couple celebration" },
+    { id: 7, src: "/images/gallery/moment-7.jpg", caption: "Sacred Promise", subtitle: "Love & Devotion", alt: "Ceremony moment" },
+    { id: 8, src: "/images/gallery/moment-8.jpg", caption: "Golden Laughs", subtitle: "Joyous Days", alt: "Celebration" },
+    { id: 9, src: "/images/gallery/moment-9.jpg", caption: "Blessed Horizons", subtitle: "Our Next Chapter", alt: "Portrait" },
+    { id: 10, src: "/images/gallery/moment-10.jpg", caption: "Endless Love", subtitle: "Hand in Hand", alt: "Cherished memory" },
+    { id: 11, src: "/images/gallery/moment-11.jpg", caption: "A Beautiful Tomorrow", subtitle: "With Family & Faith", alt: "Celebration portrait" }
+  ],
+
   celebrations: [
     {
       id: "betrothal",

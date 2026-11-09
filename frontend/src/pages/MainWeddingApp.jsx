@@ -63,3 +63,4 @@ export default function MainWeddingApp({ navigate }) {
     </div>
   );
 }
+

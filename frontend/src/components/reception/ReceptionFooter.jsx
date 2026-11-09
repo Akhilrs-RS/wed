@@ -2,7 +2,7 @@ import React from 'react';
 import { Heart, Sparkles, ArrowLeft } from 'lucide-react';
 import { weddingData } from '../../data/weddingData';
 
-export default function ReceptionFooter({ navigate }) {
+export default function ReceptionFooter({ navigate, onOpenEnvelope }) {
   const { couple, receptionSite } = weddingData;
 
   return (
@@ -42,7 +42,20 @@ export default function ReceptionFooter({ navigate }) {
           </p>
         </div>
 
-        {/* Navigation & Link back to full invite */}
+        {/* Re-Open Royal Envelope Button */}
+        {onOpenEnvelope && (
+          <div className="pt-2">
+            <button
+              onClick={onOpenEnvelope}
+              className="inline-flex items-center space-x-2 px-6 py-2.5 rounded-full border border-gold-400 bg-imperial-900 hover:bg-imperial-800 text-gold-200 font-cinzel text-xs tracking-wider uppercase transition-all shadow-md hover:scale-105 active:scale-95 cursor-pointer"
+            >
+              <Sparkles size={13} className="text-gold-400" />
+              <span>Re-open Royal Envelope</span>
+            </button>
+          </div>
+        )}
+
+        {/* Navigation */}
         <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-cinzel tracking-widest uppercase text-stone-300 pt-4">
           <a href="#story" className="hover:text-gold-400 transition-colors">Our Story</a>
           <span>•</span>
@@ -52,13 +65,15 @@ export default function ReceptionFooter({ navigate }) {
           <span>•</span>
           <a href="#schedule" className="hover:text-gold-400 transition-colors">Schedule</a>
           <span>•</span>
+          <a href="#gallery" className="hover:text-gold-400 transition-colors">Gallery</a>
+          <span>•</span>
           <a href="#rsvp" className="hover:text-gold-400 transition-colors">RSVP</a>
         </div>
 
         <div className="pt-4">
           <button
             onClick={() => navigate('/')}
-            className="inline-flex items-center space-x-2 px-5 py-2.5 bg-imperial-900 hover:bg-imperial-800 border border-gold-500/50 hover:border-gold-400 text-gold-300 text-xs font-cinzel tracking-wider uppercase transition-colors"
+            className="inline-flex items-center space-x-2 px-5 py-2.5 bg-imperial-900 hover:bg-imperial-800 border border-gold-500/50 hover:border-gold-400 text-gold-300 text-xs font-cinzel tracking-wider uppercase transition-colors cursor-pointer"
           >
             <ArrowLeft size={13} />
             <span>VIEW FULL WEDDING INVITATION (DEC 21 &amp; 30)</span>
@@ -73,3 +88,4 @@ export default function ReceptionFooter({ navigate }) {
     </footer>
   );
 }
+
