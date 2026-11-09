@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Heart, Navigation, Calendar, ExternalLink, ChevronDown } from 'lucide-react';
+import { Sparkles, Heart, Navigation, Calendar, ExternalLink, ChevronDown, Maximize2, X } from 'lucide-react';
 import { weddingData } from '../../data/weddingData';
 import ScrollReveal from '../common/ScrollReveal';
 import confetti from 'canvas-confetti';
@@ -7,6 +7,7 @@ import confetti from 'canvas-confetti';
 export default function ReceptionHero() {
   const { couple, receptionSite } = weddingData;
   const [blessingSent, setBlessingSent] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const triggerHeroBlessing = () => {
     setBlessingSent(true);
@@ -112,33 +113,50 @@ export default function ReceptionHero() {
             </div>
 
             {/* =====================================================================
-                SECTION 1: ROYAL HERALDIC MONOGRAM EMBLEM
+                SECTION 1: ROYAL CAMEO MEDALLION FEATURING bb.jpg
                ===================================================================== */}
             <div className="relative z-10 text-center mb-6">
               
-              {/* Embossed Royal Wax-Seal Cartouche */}
-              <div className="inline-flex items-center justify-center relative mb-3">
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-gold-500 bg-gradient-to-br from-[#FAF6EE] via-white to-[#F5ECDB] shadow-[0_8px_30px_rgba(212,175,55,0.35)] flex flex-col items-center justify-center p-2 transform transition-transform hover:scale-105">
-                  {/* Concentric Gold Rings */}
-                  <div className="absolute inset-1.5 rounded-full border border-gold-500/40" />
-                  <div className="absolute inset-2.5 rounded-full border border-gold-400/25" />
+              {/* Royal Cameo Brooch Medallion with bb.jpg */}
+              <div className="inline-flex items-center justify-center relative mb-5">
+                {/* Outer Pulsing Candlelight Halo */}
+                <div className="absolute -inset-2.5 rounded-full border-2 border-gold-400/40 animate-pulse pointer-events-none" />
 
-                  {/* Latin Cross with Golden Rays */}
-                  <span className="font-cinzel text-xs text-gold-700 font-bold leading-none mb-0.5">✝</span>
-
-                  {/* Intertwined Script Monogram */}
-                  <span className="font-script text-3xl sm:text-4xl text-imperial-950 font-bold select-none leading-none pt-0.5 drop-shadow-sm">
-                    {couple.monogram}
-                  </span>
-
-                  {/* Date on Seal */}
-                  <span className="text-[8px] font-cinzel tracking-[0.2em] uppercase text-gold-800 font-semibold mt-1">
-                    30 • XII • 2026
-                  </span>
+                {/* Top Latin Cross Medallion */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-2 border-gold-500 bg-[#FFFDF9] flex items-center justify-center shadow-md z-20">
+                  <span className="font-cinzel text-xs text-gold-700 font-bold">✝</span>
                 </div>
 
-                {/* Pulsing Starlight Halo */}
-                <div className="absolute -inset-2 rounded-full border border-gold-400/30 animate-pulse pointer-events-none" />
+                {/* Cameo Brooch Circle Framing bb.jpg */}
+                <div
+                  onClick={() => setModalOpen(true)}
+                  className="group relative w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full border-4 border-gold-500/80 shadow-[0_10px_35px_rgba(212,175,55,0.4)] p-1 bg-gradient-to-br from-gold-300 via-gold-400 to-gold-600 cursor-pointer overflow-hidden transform transition-all duration-500 hover:scale-105 active:scale-95"
+                  title="Click to view full portrait"
+                  aria-label="View couple portrait"
+                >
+                  {/* Inner Bezel Ring */}
+                  <div className="relative w-full h-full rounded-full overflow-hidden border border-gold-200/60 shadow-inner">
+                    <img
+                      src={couple.heroImage || '/images/bb.jpg'}
+                      alt="Robin Varghese & Benigla J L"
+                      className="w-full h-full object-cover object-[center_32%] transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Subtle Vignette Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-imperial-950/40 via-transparent to-black/10 pointer-events-none" />
+
+                    {/* Hover View Icon */}
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <Maximize2 size={16} className="text-gold-200 drop-shadow" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom R & B Monogram Ribbon Pill */}
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-imperial-950 text-gold-300 border border-gold-400/80 text-[10px] sm:text-xs font-cinzel tracking-[0.2em] uppercase font-bold shadow-xl flex items-center space-x-1.5 z-20 whitespace-nowrap">
+                  <span>{couple.monogram}</span>
+                  <span className="text-gold-500 text-[8px]">•</span>
+                  <span className="text-[9px] text-gold-400/90 tracking-widest">30.12.26</span>
+                </div>
               </div>
 
               {/* Royal Proclamation Eyebrow */}
@@ -338,6 +356,35 @@ export default function ReceptionHero() {
           </div>
         </ScrollReveal>
       </div>
+
+      {/* Cameo Full Photo Modal Lightbox */}
+      {modalOpen && (
+        <div
+          onClick={() => setModalOpen(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-fade-in"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-2xl w-full flex flex-col items-center"
+          >
+            <button
+              onClick={() => setModalOpen(false)}
+              className="absolute -top-12 right-0 text-white/80 hover:text-white p-2 transition-colors cursor-pointer"
+              aria-label="Close photo view"
+            >
+              <X size={28} />
+            </button>
+            <img
+              src={couple.heroImage || '/images/bb.jpg'}
+              alt="Robin Varghese & Benigla J L"
+              className="max-h-[82vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-white/20"
+            />
+            <p className="font-cinzel text-sm tracking-widest uppercase text-white/90 mt-4">
+              Robin Varghese &amp; Benigla J L
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
