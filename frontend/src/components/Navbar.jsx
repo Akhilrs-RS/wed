@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles, ArrowRight } from 'lucide-react';
 import { weddingData } from '../data/weddingData';
 
-export default function Navbar() {
+export default function Navbar({ navigate }) {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('');
@@ -104,10 +104,23 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right Accent Motif */}
-        <div className="hidden md:flex items-center space-x-2 text-gold-600 text-xs tracking-widest font-cinzel">
-          <Sparkles size={12} className="animate-pulse text-gold-500" />
-          <span>DECEMBER 2026</span>
+        {/* Right Accent Motif & Reception Route Link */}
+        <div className="hidden lg:flex items-center space-x-4">
+          <div className="flex items-center space-x-2 text-gold-600 text-xs tracking-widest font-cinzel">
+            <Sparkles size={12} className="animate-pulse text-gold-500" />
+            <span>DECEMBER 2026</span>
+          </div>
+
+          {navigate && (
+            <button
+              onClick={() => navigate('/reception')}
+              className="group inline-flex items-center space-x-1 px-3 py-1 bg-gold-100/60 hover:bg-gold-200/80 text-gold-900 border border-gold-400/60 text-[10px] font-cinzel tracking-wider uppercase font-semibold transition-all shadow-sm"
+              title="Open dedicated Wedding Reception invitation page"
+            >
+              <span>RECEPTION ONLY</span>
+              <ArrowRight size={11} className="text-gold-700 transition-transform group-hover:translate-x-0.5" />
+            </button>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -141,6 +154,20 @@ export default function Navbar() {
                 </a>
               );
             })}
+
+            {navigate && (
+              <div className="pt-4 border-t border-gold-500/20">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    navigate('/reception');
+                  }}
+                  className="w-full py-2.5 text-center text-xs tracking-wider uppercase font-cinzel text-gold-900 bg-gold-100/80 border border-gold-400 font-bold"
+                >
+                  VIEW RECEPTION ONLY (DEC 30) →
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

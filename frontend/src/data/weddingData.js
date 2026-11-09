@@ -68,6 +68,72 @@ export const weddingData = {
     }
   },
 
+  receptionSite: {
+    heroTagline: "THE GRAND CELEBRATION",
+    title: "Wedding Reception",
+    subtitle: "An Evening of Festive Banquet, Music & Heartfelt Thanksgiving",
+    date: "Wednesday, 30 December 2026",
+    day: "30",
+    month: "DECEMBER",
+    year: "2026",
+    time: "5:30 PM",
+    dayOfWeek: "WEDNESDAY",
+    fullDateString: "2026-12-30T17:30:00+05:30",
+    venue: {
+      name: "Uthiram Auditorium",
+      location: "Punniyam, Kanyakumari, Tamil Nadu",
+      fullAddress: "Uthiram Auditorium, Punniyam, Kanyakumari, Tamil Nadu",
+      mapUrl: "https://maps.app.goo.gl/a1Dktufxz9B4JJK8A?g_st=awb",
+      image: "/images/auditorium.jpg"
+    },
+    schedule: [
+      {
+        time: "05:30 PM",
+        title: "The Grand Reception",
+        detail: "Evening Welcome & Traditional Refreshments",
+        badge: "ARRIVAL"
+      },
+      {
+        time: "06:30 PM",
+        title: "Nuptial Welcome & Felicitations",
+        detail: "Welcoming the Couple with Family Blessings & Prayers",
+        badge: "CEREMONY"
+      },
+      {
+        time: "07:30 PM",
+        title: "Cake Cutting & Melodies",
+        detail: "Celebratory Toast, Music & Joyful Memories",
+        badge: "CELEBRATION"
+      },
+      {
+        time: "08:00 PM",
+        title: "Festive Dinner Banquet",
+        detail: "Lavish Traditional Feast in Honor of the Newlyweds",
+        badge: "FEAST"
+      }
+    ],
+    couple: {
+      groom: {
+        firstName: "Robin",
+        fullName: "Robin Varghese",
+        origin: "Kottarakara, Kollam, Kerala",
+        parents: {
+          father: "Mr. Gee Varghese",
+          mother: "Mrs. Mariyamma"
+        }
+      },
+      bride: {
+        firstName: "Benigla",
+        fullName: "Benigla J L",
+        origin: "Punniyam, Kanyakumari, Tamil Nadu",
+        parents: {
+          father: "Mr. Jegal Prasad. M",
+          mother: "Mrs. Letha Pushpam. V"
+        }
+      }
+    }
+  },
+
   celebrations: [
     {
       id: "betrothal",
