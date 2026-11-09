@@ -192,3 +192,4 @@ export default function WaxSealEnvelope({ isOpen, onClose, onMusicStart }) {
     </div>
   );
 }
+
