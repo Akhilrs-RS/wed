@@ -60,7 +60,7 @@ export default function TheDay() {
                 
                 {/* Badge */}
                 <div className="absolute top-6 left-6 inline-flex items-center space-x-2 px-4 py-1.5 bg-black/60 backdrop-blur-md border border-gold-400/50 text-gold-200 text-[10px] tracking-[0.25em] uppercase font-cinzel">
-                  <span>✝ SACRED CEREMONY</span>
+                  <span>✦ SACRED CEREMONY</span>
                 </div>
               </div>
 

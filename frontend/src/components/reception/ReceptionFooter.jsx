@@ -12,7 +12,7 @@ export default function ReceptionFooter({ navigate, onOpenEnvelope }) {
         {/* Monogram Seal */}
         <div className="flex flex-col items-center justify-center space-y-3">
           <div className="w-12 h-12 rounded-full border-2 border-gold-500 bg-imperial-900 flex items-center justify-center shadow-lg">
-            <span className="font-cinzel text-base text-gold-400 font-bold">✝</span>
+            <span className="font-cinzel text-base text-gold-400 font-bold">✦</span>
           </div>
           <span className="font-cinzel-dec text-2xl tracking-[0.25em] text-gold-300 font-semibold">
             {couple.monogram}

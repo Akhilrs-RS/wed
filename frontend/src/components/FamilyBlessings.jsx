@@ -7,10 +7,10 @@ export default function FamilyBlessings() {
 
   return (
     <section id="parents" className="py-24 md:py-32 relative border-y border-gold-500/30 overflow-hidden">
-      {/* Background Watermark Cross */}
+      {/* Background Watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05]">
         <span className="font-cinzel text-[20rem] md:text-[32rem] text-gold-900 font-bold">
-          ✝
+          ✦
         </span>
       </div>
 
@@ -42,7 +42,7 @@ export default function FamilyBlessings() {
             <div className="relative bg-white/85 backdrop-blur-md border-2 border-gold-500/50 rounded-t-[80px] p-8 sm:p-12 deckled-card-gold transition-all duration-300 hover:shadow-2xl hover:border-gold-500 h-full flex flex-col justify-between">
               {/* Top Seal */}
               <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-2 border-gold-500 bg-[#FAF7F2] flex items-center justify-center shadow-md">
-                <span className="font-cinzel text-lg text-gold-700 font-bold">✝</span>
+                <span className="font-cinzel text-lg text-gold-700 font-bold">✦</span>
               </div>
 
               <div className="text-center pt-6">
@@ -90,7 +90,7 @@ export default function FamilyBlessings() {
             <div className="relative bg-white/85 backdrop-blur-md border-2 border-gold-500/50 rounded-t-[80px] p-8 sm:p-12 deckled-card-gold transition-all duration-300 hover:shadow-2xl hover:border-gold-500 h-full flex flex-col justify-between">
               {/* Top Seal */}
               <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full border-2 border-gold-500 bg-[#FAF7F2] flex items-center justify-center shadow-md">
-                <span className="font-cinzel text-lg text-gold-700 font-bold">✝</span>
+                <span className="font-cinzel text-lg text-gold-700 font-bold">✦</span>
               </div>
 
               <div className="text-center pt-6">

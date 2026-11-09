@@ -115,9 +115,9 @@ export default function GalaHero() {
             {/* Pulsing Starlight Halo */}
             <div className="absolute -inset-3 rounded-full border-2 border-gold-400/40 animate-pulse-gold pointer-events-none" />
 
-            {/* Latin Cross Crest */}
+            {/* Royal Starburst Crest */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-2 border-gold-400 bg-imperial-950 flex items-center justify-center shadow-lg z-20">
-              <span className="font-cinzel text-xs text-gold-300 font-bold">✝</span>
+              <span className="font-cinzel text-xs text-gold-300 font-bold">✦</span>
             </div>
 
             {/* Cameo Brooch Circle Framing bb.jpg */}
