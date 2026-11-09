@@ -15,8 +15,8 @@ export default function ReceptionRSVP() {
   const [submitted, setSubmitted] = useState(false);
   const [wishes, setWishes] = useState([]);
   const [reactions, setReactions] = useState({
-    1: { '❤️': 38, '✨': 24, '🥂': 42 },
-    2: { '❤️': 56, '✨': 72, '💐': 35 },
+    1: { '❤️': 38, '🎉': 24, '🥂': 42 },
+    2: { '❤️': 56, '🎉': 72, '💐': 35 },
   });
 
   useEffect(() => {
@@ -261,7 +261,7 @@ export default function ReceptionRSVP() {
                     </p>
 
                     <div className="flex items-center space-x-2 pt-2 border-t border-stone-100 text-xs">
-                      {['❤️', '✨', '🥂', '💐'].map((emoji) => (
+                      {['❤️', '🎉', '🥂', '💐'].map((emoji) => (
                         <button
                           key={emoji}
                           onClick={() => handleReaction(item.id, emoji)}

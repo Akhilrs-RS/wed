@@ -16,8 +16,8 @@ export default function RSVP() {
   const [submitted, setSubmitted] = useState(false);
   const [wishes, setWishes] = useState([]);
   const [reactions, setReactions] = useState({
-    1: { '❤️': 24, '✨': 18, '🥂': 32 },
-    2: { '❤️': 45, '✨': 60, '💐': 28 },
+    1: { '❤️': 24, '🎉': 18, '🥂': 32 },
+    2: { '❤️': 45, '🎉': 60, '💐': 28 },
   });
 
   useEffect(() => {
@@ -287,7 +287,7 @@ export default function RSVP() {
 
                   {/* Interactive Reaction Pills */}
                   <div className="flex items-center space-x-2 pt-2 border-t border-stone-100 text-xs">
-                    {['❤️', '✨', '🥂', '💐'].map((emoji) => (
+                    {['❤️', '🎉', '🥂', '💐'].map((emoji) => (
                       <button
                         key={emoji}
                         onClick={() => handleReaction(item.id, emoji)}

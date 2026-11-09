@@ -55,7 +55,7 @@ export default function GalaNavbar({ navigate }) {
           className="group flex items-center space-x-2 text-gold-300 hover:text-gold-200 transition-colors"
         >
           <div className="w-8 h-8 rounded-full border border-gold-400/70 bg-imperial-950 flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform">
-            <span className="font-cinzel text-xs text-gold-400 font-bold">✦</span>
+            <span className="font-cinzel text-xs text-gold-400 font-bold">R</span>
           </div>
           <div className="flex flex-col text-left">
             <span className="font-script text-lg sm:text-xl leading-none text-gold-200 group-hover:text-gold-100">

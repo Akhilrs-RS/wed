@@ -11,9 +11,6 @@ export default function GalaFooter({ navigate, onOpenEnvelope }) {
         
         {/* Monogram Emblem */}
         <div className="flex flex-col items-center justify-center space-y-2">
-          <div className="w-12 h-12 rounded-full border border-gold-400 bg-imperial-950 flex items-center justify-center shadow-lg">
-            <span className="font-cinzel text-base text-gold-400 font-bold">✦</span>
-          </div>
           <span className="font-script text-3xl sm:text-4xl text-gold-200">
             {couple.monogram}
           </span>

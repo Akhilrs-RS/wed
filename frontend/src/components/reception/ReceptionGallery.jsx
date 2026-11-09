@@ -43,7 +43,7 @@ export default function ReceptionGallery() {
 
             <div className="flex items-center justify-center my-4 space-x-3">
               <div className="w-16 h-px bg-gold-400/40" />
-              <span className="text-gold-500 font-serif text-sm">✦</span>
+              <span className="text-gold-500 text-xs">•</span>
               <div className="w-16 h-px bg-gold-400/40" />
             </div>
 

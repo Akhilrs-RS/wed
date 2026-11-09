@@ -115,10 +115,6 @@ export default function GalaHero() {
             {/* Pulsing Starlight Halo */}
             <div className="absolute -inset-3 rounded-full border-2 border-gold-400/40 animate-pulse-gold pointer-events-none" />
 
-            {/* Royal Starburst Crest */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-2 border-gold-400 bg-imperial-950 flex items-center justify-center shadow-lg z-20">
-              <span className="font-cinzel text-xs text-gold-300 font-bold">✦</span>
-            </div>
 
             {/* Cameo Brooch Circle Framing bb.jpg */}
             <div
@@ -240,7 +236,7 @@ export default function GalaHero() {
                   blessingSent ? 'scale-125 fill-gold-400' : 'group-hover:scale-110'
                 }`}
               />
-              <span>{blessingSent ? 'BLESSING SENT! ✨' : 'SEND A BLESSING'}</span>
+              <span>{blessingSent ? 'BLESSING SENT! ❤️' : 'SEND A BLESSING'}</span>
             </button>
 
             <a

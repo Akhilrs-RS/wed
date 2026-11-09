@@ -40,19 +40,12 @@ export default function Hero() {
         <ScrollReveal animation="fade-up" duration={800}>
           <div className="relative bg-white/85 backdrop-blur-md border-2 border-gold-500/50 rounded-t-[100px] sm:rounded-t-[140px] p-6 sm:p-10 md:p-14 deckled-card-gold shadow-2xl transition-all duration-300">
             
-            {/* Top Royal Emblem */}
+            {/* Top Royal Header */}
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center relative">
-                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full border-2 border-gold-500 bg-gradient-to-b from-gold-100 to-white flex items-center justify-center shadow-lg p-3">
-                  <span className="text-2xl text-gold-700 font-cinzel font-bold">✦</span>
-                </div>
-                <div className="absolute -inset-1 rounded-full border border-gold-400/50 animate-ping pointer-events-none" />
-              </div>
-
-              <div className="flex items-center justify-center space-x-2 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-cinzel text-gold-700 font-semibold mt-3">
-                <span className="w-8 h-[1.5px] bg-gold-500/60" />
+              <div className="inline-flex items-center justify-center space-x-3 text-[10px] sm:text-xs tracking-[0.3em] uppercase font-cinzel text-gold-700 font-semibold">
+                <span className="w-10 sm:w-16 h-[1.5px] bg-gradient-to-r from-transparent to-gold-500" />
                 <span>THE ROYAL UNION</span>
-                <span className="w-8 h-[1.5px] bg-gold-500/60" />
+                <span className="w-10 sm:w-16 h-[1.5px] bg-gradient-to-l from-transparent to-gold-500" />
               </div>
             </div>
 
@@ -99,10 +92,7 @@ export default function Hero() {
                       </div>
                     </div>
 
-                    {/* Top Royal Seal on Arch */}
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-2 border-gold-500 bg-[#FAF7F2] flex items-center justify-center shadow-md">
-                      <span className="font-cinzel text-sm text-gold-700 font-bold">✦</span>
-                    </div>
+
                   </div>
                 </ScrollReveal>
               </div>
@@ -158,7 +148,7 @@ export default function Hero() {
                       className="group relative inline-flex items-center space-x-2 px-6 py-3.5 bg-gradient-to-r from-imperial-900 to-imperial-800 hover:from-imperial-800 hover:to-imperial-700 text-gold-200 font-cinzel text-xs tracking-[0.2em] uppercase font-semibold border border-gold-500/60 shadow-lg transition-all duration-300 hover:scale-105 active:scale-95"
                     >
                       <Heart size={14} className={`text-gold-400 transition-transform ${blessingSent ? 'scale-125 fill-gold-400' : 'group-hover:scale-110'}`} />
-                      <span>{blessingSent ? 'BLESSING SENT! ✨' : 'SEND A BLESSING'}</span>
+                      <span>{blessingSent ? 'BLESSING SENT! ❤️' : 'SEND A BLESSING'}</span>
                     </button>
 
                     <a

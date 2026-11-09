@@ -75,7 +75,7 @@ export default function Navbar({ navigate }) {
           className="group flex items-center space-x-3 text-imperial-800 transition-transform duration-300 hover:scale-105"
         >
           <div className="w-8 h-8 rounded-full border border-gold-500/60 flex items-center justify-center bg-gold-100/40 shadow-sm transition-transform duration-500 group-hover:rotate-180">
-            <span className="font-cinzel text-xs text-gold-700 font-bold">✦</span>
+            <span className="font-cinzel text-xs text-gold-700 font-bold">R</span>
           </div>
           <span className="font-cinzel-dec text-lg sm:text-xl tracking-[0.2em] text-imperial-800 group-hover:text-gold-700 transition-colors font-semibold">
             R &amp; B

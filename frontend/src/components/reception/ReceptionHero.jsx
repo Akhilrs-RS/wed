@@ -122,10 +122,6 @@ export default function ReceptionHero() {
                 {/* Outer Pulsing Candlelight Halo */}
                 <div className="absolute -inset-2.5 rounded-full border-2 border-gold-400/40 animate-pulse pointer-events-none" />
 
-                {/* Top Royal Medallion */}
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-2 border-gold-500 bg-[#FFFDF9] flex items-center justify-center shadow-md z-20">
-                  <span className="font-cinzel text-xs text-gold-700 font-bold">✦</span>
-                </div>
 
                 {/* Cameo Brooch Circle Framing bb.jpg */}
                 <div
@@ -308,7 +304,7 @@ export default function ReceptionHero() {
                     blessingSent ? 'scale-125 fill-gold-400' : 'group-hover:scale-110'
                   }`}
                 />
-                <span>{blessingSent ? 'BLESSING SENT! ✨' : 'SEND A BLESSING'}</span>
+                <span>{blessingSent ? 'BLESSING SENT! ❤️' : 'SEND A BLESSING'}</span>
               </button>
 
               {/* Navigate Venue Button */}

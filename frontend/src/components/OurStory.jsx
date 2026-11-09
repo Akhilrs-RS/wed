@@ -109,10 +109,7 @@ export default function OurStory() {
                 </div>
               </div>
 
-              {/* Top Royal Seal */}
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-2 border-gold-500 bg-[#FAF7F2] flex items-center justify-center shadow-lg">
-                <span className="font-cinzel text-base text-gold-700 font-bold">✦</span>
-              </div>
+
             </div>
 
             {/* Interactive Heart Blessing Bar */}

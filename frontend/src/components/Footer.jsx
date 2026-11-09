@@ -10,9 +10,6 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto px-6">
         {/* Royal Crest */}
         <div className="inline-block mb-8">
-          <div className="w-14 h-14 rounded-full border-2 border-gold-500 bg-white flex items-center justify-center mx-auto mb-4 shadow-md">
-            <span className="font-cinzel text-xl text-gold-700 font-bold">✦</span>
-          </div>
           <span className="font-cinzel-dec text-3xl sm:text-4xl tracking-[0.3em] text-imperial-900 font-semibold block">
             R &amp; B
           </span>
