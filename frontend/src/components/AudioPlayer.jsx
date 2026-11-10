@@ -52,16 +52,16 @@ export default function AudioPlayer() {
           {/* Outer Gold Accent */}
           <div className="absolute inset-0 rounded-sm border border-gold-400/30 pointer-events-none" />
 
-          {/* Circular Vinyl Icon with Concentric Rings */}
-          <div className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#180307] border border-gold-500/70 flex items-center justify-center shrink-0 overflow-hidden">
+          {/* Circular Vinyl Icon with Concentric Rings (Compact Refined Size) */}
+          <div className="relative w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full bg-[#180307] border border-gold-500/70 flex items-center justify-center shrink-0 overflow-hidden">
             <div
               className={`w-full h-full rounded-full flex items-center justify-center relative ${
                 isPlaying ? 'animate-spin-slow' : ''
               }`}
             >
-              <div className="absolute inset-1 rounded-full border border-gold-400/30" />
-              <div className="w-2.5 h-2.5 rounded-full bg-gold-500 flex items-center justify-center shadow-inner">
-                <div className="w-1 h-1 rounded-full bg-[#180307]" />
+              <div className="absolute inset-0.5 rounded-full border border-gold-400/30" />
+              <div className="w-1.5 h-1.5 rounded-full bg-gold-500 flex items-center justify-center shadow-inner">
+                <div className="w-0.5 h-0.5 rounded-full bg-[#180307]" />
               </div>
             </div>
           </div>
