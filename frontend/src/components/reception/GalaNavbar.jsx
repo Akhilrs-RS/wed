@@ -90,7 +90,7 @@ export default function GalaNavbar({ navigate }) {
           })}
         </nav>
 
-        {/* Right Action: Church Wedding Crosslink */}
+        {/* Right Action: Church Wedding Crosslink (Commented out for reception-only site)
         <div className="hidden lg:flex items-center space-x-3">
           {navigate && (
             <button
@@ -103,6 +103,7 @@ export default function GalaNavbar({ navigate }) {
             </button>
           )}
         </div>
+        */}
 
         {/* Mobile Menu Button */}
         <button
@@ -129,6 +130,7 @@ export default function GalaNavbar({ navigate }) {
               </a>
             ))}
 
+            {/* Church wedding crosslink commented out for reception-only site
             {navigate && (
               <div className="pt-3 border-t border-gold-500/30">
                 <button
@@ -142,6 +144,7 @@ export default function GalaNavbar({ navigate }) {
                 </button>
               </div>
             )}
+            */}
           </div>
         </div>
       )}

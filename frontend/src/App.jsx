@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MainWeddingApp from './pages/MainWeddingApp';
+// import MainWeddingApp from './pages/MainWeddingApp';
 import ReceptionApp from './pages/ReceptionApp';
 
 export default function App() {
@@ -27,6 +27,11 @@ export default function App() {
     }
   };
 
+  // Grand Gala Reception page rendered directly on initial load
+  return <ReceptionApp navigate={navigate} />;
+
+  /*
+  // PREVIOUS MULTI-PAGE ROUTER (Commented out - can be re-enabled anytime)
   const isReception = currentPath.toLowerCase().startsWith('/reception');
 
   if (isReception) {
@@ -34,4 +39,5 @@ export default function App() {
   }
 
   return <MainWeddingApp navigate={navigate} />;
+  */
 }

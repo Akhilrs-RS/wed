@@ -42,7 +42,7 @@ export default function GalaFooter({ navigate, onOpenEnvelope }) {
           </div>
         )}
 
-        {/* Navigation back to Holy Matrimony */}
+        {/* Navigation back to Holy Matrimony (Commented out for reception-only site)
         <div className="pt-4">
           <button
             onClick={() => navigate('/')}
@@ -52,6 +52,7 @@ export default function GalaFooter({ navigate, onOpenEnvelope }) {
             <span>VIEW CHURCH MATRIMONY INVITATION (DEC 21)</span>
           </button>
         </div>
+        */}
 
         {/* Copyright */}
         <div className="pt-8 border-t border-gold-500/20 text-[10px] text-stone-500 font-mono tracking-wider">

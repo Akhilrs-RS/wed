@@ -1,3 +1,10 @@
+/*
+ * NOTE: MainWeddingApp (Church Wedding Page) is currently commented out as requested.
+ * The website currently defaults directly to ReceptionApp (Grand Gala Reception).
+ * All code below is completely preserved and ready to be un-commented whenever needed.
+ */
+
+/*
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -13,9 +20,6 @@ import PetalCanvas from '../components/common/PetalCanvas';
 export default function MainWeddingApp({ navigate }) {
   return (
     <div className="relative min-h-screen text-stone-900 font-sans selection:bg-gold-500/20 selection:text-imperial-900 overflow-x-hidden">
-      {/* =========================================================================
-          HIGH VISIBILITY FIXED BACKGROUND (bd.jpg) WITH FACE-ALIGNED POSITIONING
-         ========================================================================= */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img
           src="/images/bd.jpg"
@@ -26,41 +30,30 @@ export default function MainWeddingApp({ navigate }) {
         <div className="absolute inset-0 bg-[#FAF7F2]/35 pointer-events-none" />
       </div>
 
-      {/* Interactive Floating Petals & Gold Dust Canvas */}
       <PetalCanvas />
 
-      {/* Main Content Layer */}
       <div className="relative z-10">
-        {/* Sticky Header / Monogram Navigation */}
         <Navbar navigate={navigate} />
 
         <main>
-          {/* Hero Section with Prominent bb.jpg Arch Showcase */}
           <Hero />
-
-          {/* Story & Bride-Groom Portrait (s.jpg) */}
           <OurStory />
-
-          {/* Dedicated Parents & Family Blessings Section */}
           <FamilyBlessings />
-
-          {/* Live Wedding Day Countdown */}
           <Countdown />
-
-          {/* The Day: Church Holy Matrimony & Reception Auditorium */}
           <TheDay />
-
-          {/* Interactive RSVP & Blessings Guestbook */}
           <RSVP />
         </main>
 
-        {/* Floating Audio Player */}
         <AudioPlayer />
-
-        {/* Footer */}
         <Footer navigate={navigate} />
       </div>
     </div>
   );
 }
+*/
+
+export default function MainWeddingApp() {
+  return null;
+}
+
 
