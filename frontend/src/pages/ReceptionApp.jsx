@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-import GalaNavbar from '../components/reception/GalaNavbar';
-import GalaHero from '../components/reception/GalaHero';
-import GalaProgram from '../components/reception/GalaProgram';
-import GalaHeritage from '../components/reception/GalaHeritage';
-import GalaVenue from '../components/reception/GalaVenue';
-import GalaGallery from '../components/reception/GalaGallery';
-import GalaRSVP from '../components/reception/GalaRSVP';
-import GalaFooter from '../components/reception/GalaFooter';
-import WaxSealEnvelope from '../components/reception/WaxSealEnvelope';
-import VelvetMusicButton from '../components/reception/VelvetMusicButton';
+import NewGalaNavbar from '../components/reception/NewGalaNavbar';
+import NewGalaHero from '../components/reception/NewGalaHero';
+import NewGalaProgram from '../components/reception/NewGalaProgram';
+import NewGalaHeritage from '../components/reception/NewGalaHeritage';
+import NewGalaVenue from '../components/reception/NewGalaVenue';
+import NewGalaGallery from '../components/reception/NewGalaGallery';
+import NewGalaRSVP from '../components/reception/NewGalaRSVP';
+import NewGalaFooter from '../components/reception/NewGalaFooter';
+import NewWaxEnvelope from '../components/reception/NewWaxEnvelope';
+import NewSoundBar from '../components/reception/NewSoundBar';
 import FloatingPetals from '../components/reception/FloatingPetals';
 import ChampagneBokeh from '../components/reception/ChampagneBokeh';
 import { weddingData } from '../data/weddingData';
@@ -67,10 +67,10 @@ export default function ReceptionApp({ navigate }) {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#180307] via-[#24060E] to-[#120205] text-stone-100 font-sans selection:bg-gold-500/30 selection:text-gold-200 overflow-x-hidden">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#180309] via-[#24060E] to-[#120205] text-stone-100 font-sans selection:bg-gold-500/30 selection:text-gold-200 overflow-x-hidden">
       
       {/* 3D Wax-Sealed Opening Envelope Ceremony */}
-      <WaxSealEnvelope
+      <NewWaxEnvelope
         isOpen={showEnvelope}
         onClose={() => setShowEnvelope(false)}
         onMusicStart={handleMusicStart}
@@ -94,37 +94,36 @@ export default function ReceptionApp({ navigate }) {
       <div className="relative z-10">
         
         {/* Bespoke Floating Glassmorphic Pill Header */}
-        <GalaNavbar navigate={navigate} />
+        <NewGalaNavbar />
 
         <main>
-          {/* 1. Starlight Gala Hero with Integrated Live Countdown */}
-          <GalaHero />
+          {/* 1. Haute Couture Editorial Hero with bb.jpg & Live Chronometer */}
+          <NewGalaHero />
 
-          {/* 2. 4-Stage Illuminated Evening Gala Program */}
-          <GalaProgram />
+          {/* 2. Luminous Filament Evening Gala Program */}
+          <NewGalaProgram />
 
-          {/* 3. Nuptial Heritage: Kottarakara meets Punniyam (Zero Duplicate Components) */}
-          <GalaHeritage />
+          {/* 3. Two Houses United Heritage Diptych */}
+          <NewGalaHeritage />
 
-          {/* 4. The Grand Pavilion: Uthiram Auditorium Showcase */}
-          <GalaVenue />
+          {/* 4. Imperial Venue Concierge: Uthiram Auditorium Showcase, Maps & Calendar */}
+          <NewGalaVenue />
 
-          {/* 5. 11-Photo Captured Moments Gallery & Modal Lightbox */}
-          <GalaGallery />
+          {/* 5. Salon des Moments: 11-Photo Captured Memories & Lightbox */}
+          <NewGalaGallery />
 
-          {/* 6. Digital Champagne Toast Wall & Reception RSVP */}
-          <GalaRSVP />
+          {/* 6. Digital Champagne Toast Wall & Wishes Guestbook */}
+          <NewGalaRSVP />
         </main>
 
-        {/* Floating Velvet Music Brooch ("PLAY MELODY / Tap to Listen") */}
-        <VelvetMusicButton
+        {/* Floating Minimalist Sound Bar ("PLAY MELODY / PAUSE MELODY") */}
+        <NewSoundBar
           isPlaying={isPlaying}
           onToggleAudio={handleToggleAudio}
         />
 
-        {/* Gala Footer with Re-open Royal Envelope */}
-        <GalaFooter
-          navigate={navigate}
+        {/* Gala Footer with Monogram & Re-open Royal Envelope */}
+        <NewGalaFooter
           onOpenEnvelope={() => setShowEnvelope(true)}
         />
       </div>
