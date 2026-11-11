@@ -50,3 +50,4 @@ export default function V2SoundBar({ isPlaying, onToggleAudio }) {
     </div>
   );
 }
+

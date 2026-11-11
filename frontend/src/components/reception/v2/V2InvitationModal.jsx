@@ -84,3 +84,4 @@ export default function V2InvitationModal({ isOpen, onClose }) {
     </div>
   );
 }
+

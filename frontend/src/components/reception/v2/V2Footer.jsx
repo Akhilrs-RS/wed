@@ -61,3 +61,4 @@ export default function V2Footer({ onOpenInvitation }) {
     </footer>
   );
 }
+
