@@ -146,3 +146,4 @@ export default function NewWaxEnvelope({ isOpen, onClose, onMusicStart }) {
     </div>
   );
 }
+

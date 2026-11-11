@@ -51,3 +51,4 @@ export default function NewSoundBar({ isPlaying, onToggleAudio }) {
     </div>
   );
 }
+

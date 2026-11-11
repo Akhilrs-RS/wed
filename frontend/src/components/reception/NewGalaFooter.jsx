@@ -61,3 +61,4 @@ export default function NewGalaFooter({ onOpenEnvelope }) {
     </footer>
   );
 }
+

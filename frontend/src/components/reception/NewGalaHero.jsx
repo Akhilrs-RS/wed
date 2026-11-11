@@ -266,3 +266,4 @@ export default function NewGalaHero() {
     </section>
   );
 }
+
