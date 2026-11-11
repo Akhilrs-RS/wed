@@ -47,27 +47,17 @@ export default function NewGalaNavbar() {
             : 'bg-[#180309]/70 backdrop-blur-md border border-gold-400/25 shadow-lg'
         }`}
       >
-        {/* Monogram Brand Mark: Interlocking R & B Rings */}
+        {/* Brand Link: Couple Names */}
         <a
           href="#gala-hero"
-          className="group flex items-center space-x-3 text-gold-300 hover:text-gold-200 transition-all cursor-pointer"
+          className="group flex flex-col text-left text-gold-300 hover:text-gold-200 transition-all cursor-pointer"
         >
-          <div className="relative flex items-center -space-x-2 group-hover:-space-x-1 transition-all duration-300">
-            <div className="w-8 h-8 rounded-full border border-gold-400/80 bg-gradient-to-br from-[#1F1F2E] to-[#0D0D15] flex items-center justify-center text-xs font-cinzel font-bold text-gold-300 shadow-lg group-hover:border-gold-300 transition-colors z-10">
-              R
-            </div>
-            <div className="w-8 h-8 rounded-full border border-gold-400/80 bg-gradient-to-br from-[#1F1F2E] to-[#0D0D15] flex items-center justify-center text-xs font-cinzel font-bold text-gold-300 shadow-lg group-hover:border-gold-300 transition-colors z-20">
-              B
-            </div>
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="font-cinzel text-xs sm:text-sm tracking-[0.22em] font-semibold text-white group-hover:text-gold-200 transition-colors leading-none">
-              ROBIN <span className="font-script text-gold-400 text-sm sm:text-base font-normal">&amp;</span> BENIGLA
-            </span>
-            <span className="text-[7.5px] font-cinzel tracking-[0.3em] uppercase text-gold-400/90 leading-none mt-1">
-              RECEPTION GALA • DEC 30
-            </span>
-          </div>
+          <span className="font-cinzel text-xs sm:text-sm tracking-[0.22em] font-semibold text-white group-hover:text-gold-200 transition-colors leading-none">
+            ROBIN <span className="font-script text-gold-400 text-sm sm:text-base font-normal">&amp;</span> BENIGLA
+          </span>
+          <span className="text-[7.5px] font-cinzel tracking-[0.3em] uppercase text-gold-400/90 leading-none mt-1">
+            RECEPTION GALA • DEC 30
+          </span>
         </a>
 
         {/* Desktop Navigation Links */}
