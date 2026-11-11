@@ -9,11 +9,11 @@ export default function V2Footer({ onOpenInvitation }) {
     <footer className="py-20 sm:py-28 relative bg-[#07070B] text-white border-t border-white/10 overflow-hidden text-center">
       <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-7">
         
-        {/* Monogram Seal */}
+        {/* Names Header */}
         <div className="flex flex-col items-center justify-center space-y-2">
-          <span className="font-script text-5xl sm:text-6xl text-gold-200 drop-shadow-lg">
-            {couple.monogram}
-          </span>
+          <h3 className="font-cinzel text-2xl sm:text-4xl text-white font-medium tracking-wide">
+            Robin <span className="font-script text-3xl sm:text-5xl text-gold-300">&amp;</span> Benigla
+          </h3>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-1" />
           <p className="font-cinzel text-[10px] sm:text-xs tracking-[0.35em] uppercase text-gold-400/90 font-semibold">
             THE WEDDING RECEPTION GALA • KANYAKUMARI

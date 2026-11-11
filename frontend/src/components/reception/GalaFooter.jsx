@@ -9,11 +9,11 @@ export default function GalaFooter({ navigate, onOpenEnvelope }) {
     <footer className="py-16 sm:py-20 relative bg-black/85 text-white border-t border-gold-400/40 overflow-hidden text-center">
       <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
         
-        {/* Monogram Emblem */}
+        {/* Names Header */}
         <div className="flex flex-col items-center justify-center space-y-2">
-          <span className="font-script text-3xl sm:text-4xl text-gold-200">
-            {couple.monogram}
-          </span>
+          <h3 className="font-cinzel text-2xl sm:text-4xl text-white font-medium tracking-wide">
+            Robin <span className="font-script text-3xl sm:text-5xl text-gold-300">&amp;</span> Benigla
+          </h3>
           <p className="font-cinzel text-[10px] tracking-[0.3em] uppercase text-gold-400/80">
             THE WEDDING RECEPTION GALA • KANYAKUMARI
           </p>
