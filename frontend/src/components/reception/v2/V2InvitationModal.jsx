@@ -5,7 +5,7 @@ import DateScratchCard from './DateScratchCard';
 import LetterOpening from './LetterOpening';
 
 export default function V2InvitationModal({ isOpen, onClose, onMusicStart }) {
-  const [view, setView] = useState('card'); // 'card', 'scratch', 'letter'
+  const [view, setView] = useState('letter'); // Defaults directly to 3D Wax Letter Opening
   if (!isOpen) return null;
   const { couple, receptionSite } = weddingData;
 
@@ -18,19 +18,19 @@ export default function V2InvitationModal({ isOpen, onClose, onMusicStart }) {
 
   return (
     <div
-      onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/90 backdrop-blur-xl animate-fade-in"
+      onClick={handleEnterCelebration}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/92 backdrop-blur-2xl animate-fade-in"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-2xl p-6 sm:p-10 rounded-3xl bg-[#0F0F18] border-2 border-gold-400/70 shadow-[0_30px_90px_rgba(0,0,0,0.95)] text-center space-y-6 max-h-[92vh] overflow-y-auto"
+        className="relative w-full max-w-2xl p-5 sm:p-9 rounded-3xl bg-[#0F0F18] border-2 border-gold-400/70 shadow-[0_30px_90px_rgba(0,0,0,0.95)] text-center space-y-6 max-h-[92vh] overflow-y-auto"
       >
         {/* Close / Skip Button */}
         <button
           onClick={handleEnterCelebration}
-          className="absolute top-5 right-5 text-stone-400 hover:text-white p-2 rounded-full border border-white/10 transition-colors cursor-pointer z-50 flex items-center space-x-1"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-stone-400 hover:text-white p-2 rounded-full border border-white/10 transition-colors cursor-pointer z-50 flex items-center space-x-1"
           aria-label="Enter celebration"
-          title="Enter Celebration"
+          title="Skip to Celebration"
         >
           <span className="text-[10px] font-cinzel tracking-wider uppercase text-stone-400 hover:text-white hidden sm:inline">Skip</span>
           <X size={18} />
@@ -38,6 +38,17 @@ export default function V2InvitationModal({ isOpen, onClose, onMusicStart }) {
 
         {/* Modal Mini Navigation Tabs */}
         <div className="flex items-center justify-center space-x-2 pt-1 pb-1 border-b border-white/10">
+          <button
+            onClick={() => setView('letter')}
+            className={`px-3.5 py-1.5 rounded-full text-[10px] font-cinzel tracking-wider uppercase transition-all flex items-center space-x-1.5 ${
+              view === 'letter'
+                ? 'bg-gold-500 text-imperial-950 font-bold shadow'
+                : 'text-stone-300 hover:text-white bg-white/5'
+            }`}
+          >
+            <Mail size={12} />
+            <span>Wax Letter</span>
+          </button>
           <button
             onClick={() => setView('card')}
             className={`px-3.5 py-1.5 rounded-full text-[10px] font-cinzel tracking-wider uppercase transition-all ${
@@ -58,17 +69,6 @@ export default function V2InvitationModal({ isOpen, onClose, onMusicStart }) {
           >
             <Calendar size={12} />
             <span>Scratch Dates</span>
-          </button>
-          <button
-            onClick={() => setView('letter')}
-            className={`px-3.5 py-1.5 rounded-full text-[10px] font-cinzel tracking-wider uppercase transition-all flex items-center space-x-1.5 ${
-              view === 'letter'
-                ? 'bg-gold-500 text-imperial-950 font-bold shadow'
-                : 'text-stone-300 hover:text-white bg-white/5'
-            }`}
-          >
-            <Mail size={12} />
-            <span>Wax Letter</span>
           </button>
         </div>
 
@@ -134,19 +134,24 @@ export default function V2InvitationModal({ isOpen, onClose, onMusicStart }) {
         {/* VIEW 3: WAX SEAL LETTER */}
         {view === 'letter' && (
           <div className="py-2 animate-fade-in">
-            <LetterOpening />
+            <LetterOpening
+              onMusicStart={onMusicStart}
+              onEnterCelebration={handleEnterCelebration}
+            />
           </div>
         )}
 
-        {/* Close & Enter CTA */}
-        <div className="pt-2">
-          <button
-            onClick={handleEnterCelebration}
-            className="px-7 py-3 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-imperial-950 font-cinzel text-xs tracking-wider uppercase font-bold shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gold-sheen-sweep"
-          >
-            ENTER CELEBRATION &amp; PLAY MELODY
-          </button>
-        </div>
+        {/* Enter Celebration Button for Card and Scratch views */}
+        {view !== 'letter' && (
+          <div className="pt-2">
+            <button
+              onClick={handleEnterCelebration}
+              className="px-7 py-3 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-imperial-950 font-cinzel text-xs tracking-wider uppercase font-bold shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gold-sheen-sweep"
+            >
+              ENTER CELEBRATION
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

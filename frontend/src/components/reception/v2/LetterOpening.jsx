@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 import { Mail, MailOpen, Heart, RotateCcw } from 'lucide-react';
 import { weddingData } from '../../../data/weddingData';
 
-export default function LetterOpening() {
+export default function LetterOpening({ onMusicStart, onEnterCelebration }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isFlapOpen, setIsFlapOpen] = useState(false);
   const [isLetterExtracted, setIsLetterExtracted] = useState(false);
@@ -13,15 +13,20 @@ export default function LetterOpening() {
     if (isOpen) return;
     setIsOpen(true);
 
+    // Start melody upon user unsealing tap gesture
+    if (onMusicStart) {
+      onMusicStart();
+    }
+
     // 1. Break wax seal & flip 3D flap
     setTimeout(() => {
       setIsFlapOpen(true);
       try {
         confetti({
-          particleCount: 65,
-          spread: 80,
+          particleCount: 75,
+          spread: 85,
           origin: { y: 0.62 },
-          colors: ['#D4AF37', '#FAF6F0', '#9E2A2B', '#E6C687']
+          colors: ['#D4AF37', '#FAF6F0', '#9E2A2B', '#E6C687', '#FFD700']
         });
       } catch (e) {
         console.log('Confetti error:', e);
@@ -31,7 +36,7 @@ export default function LetterOpening() {
     // 2. Slide and unfold letter
     setTimeout(() => {
       setIsLetterExtracted(true);
-    }, 900);
+    }, 850);
   };
 
   const handleReset = () => {
@@ -110,8 +115,21 @@ export default function LetterOpening() {
                 </p>
               </div>
 
+              {/* Date & Venue Badge on Letter */}
+              <div className="my-4 p-3.5 rounded-xl bg-[#EFE4C6]/60 border border-[#D4AF37]/50 text-center space-y-1">
+                <span className="font-cinzel text-[9.5px] uppercase tracking-widest text-[#8F6819] font-bold block">
+                  WEDDING RECEPTION BANQUET
+                </span>
+                <p className="font-cinzel text-sm sm:text-base font-bold text-[#2A170A]">
+                  {receptionSite.date} • {receptionSite.time} IST
+                </p>
+                <p className="font-sans text-xs text-[#523A25]">
+                  {receptionSite.venue.name} • {receptionSite.venue.location}
+                </p>
+              </div>
+
               {/* Sign-off Lockup */}
-              <div className="pt-6 mt-6 border-t border-[#D4AF37]/30 flex flex-col items-center justify-center space-y-1">
+              <div className="pt-4 border-t border-[#D4AF37]/30 flex flex-col items-center justify-center space-y-1">
                 <p className="font-serif italic text-xs text-[#6B4E38]">
                   With all our love and warmest welcome,
                 </p>
@@ -122,6 +140,19 @@ export default function LetterOpening() {
                   DECEMBER 2026 • PUNNIYAM &amp; KERALA
                 </span>
               </div>
+
+              {/* Enter Celebration Button */}
+              {onEnterCelebration && (
+                <div className="pt-5 mt-2">
+                  <button
+                    onClick={onEnterCelebration}
+                    className="w-full sm:w-auto px-7 py-3 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-imperial-950 font-cinzel text-xs tracking-wider uppercase font-bold shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gold-sheen-sweep inline-flex items-center justify-center space-x-2"
+                  >
+                    <span>ENTER CELEBRATION</span>
+                    <span>→</span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
