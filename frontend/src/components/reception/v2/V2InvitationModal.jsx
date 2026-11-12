@@ -4,10 +4,17 @@ import { weddingData } from '../../../data/weddingData';
 import DateScratchCard from './DateScratchCard';
 import LetterOpening from './LetterOpening';
 
-export default function V2InvitationModal({ isOpen, onClose }) {
+export default function V2InvitationModal({ isOpen, onClose, onMusicStart }) {
   const [view, setView] = useState('card'); // 'card', 'scratch', 'letter'
   if (!isOpen) return null;
   const { couple, receptionSite } = weddingData;
+
+  const handleEnterCelebration = () => {
+    if (onMusicStart) {
+      onMusicStart();
+    }
+    onClose();
+  };
 
   return (
     <div
@@ -18,13 +25,15 @@ export default function V2InvitationModal({ isOpen, onClose }) {
         onClick={(e) => e.stopPropagation()}
         className="relative w-full max-w-2xl p-6 sm:p-10 rounded-3xl bg-[#0F0F18] border-2 border-gold-400/70 shadow-[0_30px_90px_rgba(0,0,0,0.95)] text-center space-y-6 max-h-[92vh] overflow-y-auto"
       >
-        {/* Close Button */}
+        {/* Close / Skip Button */}
         <button
-          onClick={onClose}
-          className="absolute top-5 right-5 text-stone-400 hover:text-white p-2 rounded-full border border-white/10 transition-colors cursor-pointer z-50"
-          aria-label="Close invitation modal"
+          onClick={handleEnterCelebration}
+          className="absolute top-5 right-5 text-stone-400 hover:text-white p-2 rounded-full border border-white/10 transition-colors cursor-pointer z-50 flex items-center space-x-1"
+          aria-label="Enter celebration"
+          title="Enter Celebration"
         >
-          <X size={20} />
+          <span className="text-[10px] font-cinzel tracking-wider uppercase text-stone-400 hover:text-white hidden sm:inline">Skip</span>
+          <X size={18} />
         </button>
 
         {/* Modal Mini Navigation Tabs */}
@@ -129,13 +138,13 @@ export default function V2InvitationModal({ isOpen, onClose }) {
           </div>
         )}
 
-        {/* Close CTA */}
+        {/* Close & Enter CTA */}
         <div className="pt-2">
           <button
-            onClick={onClose}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 text-imperial-950 font-cinzel text-xs tracking-wider uppercase font-bold shadow-lg transition-transform hover:scale-105 active:scale-95 cursor-pointer"
+            onClick={handleEnterCelebration}
+            className="px-7 py-3 rounded-full bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-imperial-950 font-cinzel text-xs tracking-wider uppercase font-bold shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer gold-sheen-sweep"
           >
-            ENTER CELEBRATION
+            ENTER CELEBRATION &amp; PLAY MELODY
           </button>
         </div>
       </div>

@@ -15,7 +15,8 @@ import ChampagneBokeh from '../components/reception/ChampagneBokeh';
 import { weddingData } from '../data/weddingData';
 
 export default function ReceptionApp() {
-  const [showInvitationModal, setShowInvitationModal] = useState(false);
+  // Opens the royal invitation suite automatically when the website opens
+  const [showInvitationModal, setShowInvitationModal] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
@@ -33,6 +34,19 @@ export default function ReceptionApp() {
       }
     };
   }, []);
+
+  // Start audio upon first unseal / enter gesture
+  const handleStartMelody = () => {
+    if (!audioRef.current || isPlaying) return;
+    audioRef.current
+      .play()
+      .then(() => {
+        setIsPlaying(true);
+      })
+      .catch((err) => {
+        console.log('Audio playback permission or error:', err);
+      });
+  };
 
   // Toggle audio from floating velvet button
   const handleToggleAudio = () => {
@@ -56,10 +70,11 @@ export default function ReceptionApp() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#08080E] via-[#101019] to-[#06060A] text-stone-100 font-sans selection:bg-gold-500/30 selection:text-gold-200 overflow-x-hidden">
       
-      {/* Formal Invitation Card Suite Modal */}
+      {/* Formal Invitation Card Suite Modal (Opens by default on page load) */}
       <V2InvitationModal
         isOpen={showInvitationModal}
         onClose={() => setShowInvitationModal(false)}
+        onMusicStart={handleStartMelody}
       />
 
       {/* Cinematic Letterbox Opening Curtain (Top & Bottom Exit Bars) */}
