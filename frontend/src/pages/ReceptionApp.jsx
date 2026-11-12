@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import V2Navbar from '../components/reception/v2/V2Navbar';
 import V2Hero from '../components/reception/v2/V2Hero';
+import V2LetterAndDates from '../components/reception/v2/V2LetterAndDates';
 import V2Program from '../components/reception/v2/V2Program';
 import V2Heritage from '../components/reception/v2/V2Heritage';
 import V2Venue from '../components/reception/v2/V2Venue';
@@ -94,7 +95,10 @@ export default function ReceptionApp() {
           {/* 1. Haute Couture Editorial Split Hero with bb.jpg & Live Chronometer */}
           <V2Hero />
 
-          {/* 2. 4-Stage Horizontal Evening Program Cards */}
+          {/* 2. Interactive Letter Opening, Royal Scroll & Scratch-to-Reveal Dates */}
+          <V2LetterAndDates />
+
+          {/* 3. 4-Stage Horizontal Evening Program Cards */}
           <V2Program />
 
           {/* 3. Two Houses United Heritage Diptych (Punniyam & Kerala) */}

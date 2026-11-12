@@ -10,6 +10,7 @@ export default function V2Navbar({ onOpenInvitation }) {
 
   const navLinks = [
     { label: 'OVERVIEW', href: '#v2-hero', id: 'v2-hero' },
+    { label: 'INVITATION', href: '#v2-invitation-suite', id: 'v2-invitation-suite' },
     { label: 'PROGRAM', href: '#v2-program', id: 'v2-program' },
     { label: 'HERITAGE', href: '#v2-heritage', id: 'v2-heritage' },
     { label: 'VENUE', href: '#v2-venue', id: 'v2-venue' },
