@@ -281,6 +281,12 @@
 .animate-wave-3 {
   animation: waveDance 1.1s ease-in-out 0.5s infinite;
 }
+.animate-wave-4 {
+  animation: waveDance 1.1s ease-in-out 0.75s infinite;
+}
+.animate-wave-5 {
+  animation: waveDance 1.1s ease-in-out 0.35s infinite;
+}
 
 /* Digit Tick Pulse */
 @keyframes digitTick {
@@ -299,5 +305,222 @@
 .animate-digit-tick {
   animation: digitTick 0.5s ease-out;
 }
+
+/* ==========================================================================
+   HOLLYWOOD & EDITORIAL CINEMATIC MOTION SYSTEM
+   ========================================================================== */
+
+/* 1. Ken Burns Slow Photographic Camera Breathing (Hero Portrait) */
+@keyframes kenBurnsBreathing {
+  0% {
+    transform: scale(1.0) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.065) translate3d(-1%, -1.2%, 0);
+  }
+  100% {
+    transform: scale(1.0) translate3d(0, 0, 0);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsBreathing 24s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* 2. Drone Aerial Pan Camera Motion (Auditorium Banner) */
+@keyframes dronePanSweep {
+  0% {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.09) translate3d(-2.8%, 0, 0);
+  }
+  100% {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+}
+
+.animate-drone-pan {
+  animation: dronePanSweep 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* 3. Anamorphic Lens Flare Horizontal Sweep */
+@keyframes anamorphicFlare {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  85% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translateX(240%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-lens-flare {
+  animation: anamorphicFlare 16s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* 4. Radar GPS Beacon Ping (Venue Pin) */
+@keyframes radarPingLoop {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  65% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.animate-radar-ping {
+  animation: radarPingLoop 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* 5. Concentric Golden Ripple for Heritage Seals */
+@keyframes rippleGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5), inset 0 0 0 0 rgba(212, 175, 55, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(212, 175, 55, 0), inset 0 0 0 4px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0), inset 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+.animate-ripple-crest {
+  animation: rippleGlow 3.5s ease-out infinite;
+}
+
+/* 6. Spotlight Ignite for Program Stages */
+@keyframes spotlightIgnite {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+  60% {
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.25);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* 7. Rack Focus Depth of Field (Gallery) */
+.rack-focus-item {
+  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 8. Filmic Letterbox Opening Bars */
+@keyframes letterboxTopExit {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes letterboxBottomExit {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-letterbox-top {
+  animation: letterboxTopExit 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.animate-letterbox-bottom {
+  animation: letterboxBottomExit 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* 9. Director's Viewfinder Crop Marks on Hover */
+.viewfinder-bracket {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: rgba(245, 208, 97, 0.85);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: scale(0.75);
+}
+
+.group:hover .viewfinder-bracket {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.viewfinder-tl {
+  top: 10px;
+  left: 10px;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.viewfinder-tr {
+  top: 10px;
+  right: 10px;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+.viewfinder-bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+
+.viewfinder-br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+/* 10. Traveling Energy Conduit Beam Pulse */
+@keyframes energyPulse {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.animate-energy-pulse {
+  animation: energyPulse 4s ease-in-out infinite;
+}
+
 
 

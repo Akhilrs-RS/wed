@@ -8,12 +8,31 @@ export default function V2Hero() {
   const { couple, receptionSite } = weddingData;
   const [modalOpen, setModalOpen] = useState(false);
   const [blessingSent, setBlessingSent] = useState(false);
+  const [cardTilt, setCardTilt] = useState({ rotateX: 0, rotateY: 0, glareX: 50, glareY: 50 });
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0
   });
+
+  const handlePortraitMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    // Elegant tilt: max 5 degrees
+    const rotateX = ((y - centerY) / centerY) * -5.5;
+    const rotateY = ((x - centerX) / centerX) * 5.5;
+    const glareX = (x / rect.width) * 100;
+    const glareY = (y / rect.height) * 100;
+    setCardTilt({ rotateX, rotateY, glareX, glareY });
+  };
+
+  const handlePortraitMouseLeave = () => {
+    setCardTilt({ rotateX: 0, rotateY: 0, glareX: 50, glareY: 50 });
+  };
 
   useEffect(() => {
     const targetDate = new Date(receptionSite.fullDateString || '2026-12-30T17:30:00+05:30').getTime();
@@ -75,17 +94,32 @@ export default function V2Hero() {
                 {/* Ambient Multi-Layer Glow */}
                 <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-gold-500/20 via-amber-400/10 to-transparent blur-2xl pointer-events-none" />
 
-                {/* Beveled Fashion Frame */}
+                {/* Beveled Fashion Frame with Interactive 3D Perspective Tilt */}
                 <div
                   onClick={() => setModalOpen(true)}
-                  className="relative rounded-3xl p-3 bg-gradient-to-b from-white/15 via-white/5 to-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.9)] cursor-pointer transform transition-all duration-700 hover:scale-[1.015] active:scale-[0.99]"
+                  onMouseMove={handlePortraitMouseMove}
+                  onMouseLeave={handlePortraitMouseLeave}
+                  style={{
+                    transform: `perspective(1000px) rotateX(${cardTilt.rotateX}deg) rotateY(${cardTilt.rotateY}deg)`,
+                    transition: 'transform 0.22s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                  className="relative rounded-3xl p-3 bg-gradient-to-b from-white/15 via-white/5 to-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.9)] cursor-pointer will-change-transform"
                   title="Click to view high-resolution portrait"
                 >
                   <div className="relative w-full h-[460px] sm:h-[520px] rounded-2xl overflow-hidden bg-black">
+                    {/* Ken Burns Breathing Camera Motion */}
                     <img
                       src={couple.heroImage || '/images/bb.jpg'}
                       alt="Robin Varghese & Benigla J L"
-                      className="w-full h-full object-cover object-[center_32%] transition-transform duration-1000 group-hover:scale-105"
+                      className="w-full h-full object-cover object-[center_32%] animate-ken-burns will-change-transform"
+                    />
+
+                    {/* Dynamic Specular Sheen reacting to cursor position */}
+                    <div
+                      className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-60 transition-opacity duration-300"
+                      style={{
+                        background: `radial-gradient(circle at ${cardTilt.glareX}% ${cardTilt.glareY}%, rgba(255,255,255,0.35) 0%, rgba(212,175,55,0.15) 35%, transparent 70%)`
+                      }}
                     />
 
                     {/* Gradient Overlay for Mood & Readability */}

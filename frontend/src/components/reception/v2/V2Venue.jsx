@@ -44,12 +44,12 @@ export default function V2Venue() {
         <ScrollReveal animation="zoom-in" duration={800}>
           <div className="rounded-3xl bg-[#12121B]/90 border border-white/10 shadow-[0_25px_80px_rgba(0,0,0,0.85)] overflow-hidden backdrop-blur-xl">
             
-            {/* Top Panoramic Banner */}
+            {/* Top Panoramic Banner with Drone Pan Sweep */}
             <div className="relative h-[320px] sm:h-[420px] w-full overflow-hidden group">
               <img
                 src={venue.image || '/images/auditorium.jpg'}
                 alt={venue.name}
-                className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+                className="w-full h-full object-cover object-center animate-drone-pan will-change-transform"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#12121B] via-transparent to-black/40 pointer-events-none" />
 
@@ -100,8 +100,10 @@ export default function V2Venue() {
                 </div>
 
                 <div className="flex items-start space-x-3.5 pt-2">
-                  <div className="w-10 h-10 rounded-xl bg-gold-500/15 border border-gold-400/40 flex items-center justify-center text-gold-300 shrink-0 mt-0.5">
-                    <MapPin size={18} />
+                  {/* Map Pin with Animated Radar Beacon */}
+                  <div className="relative w-10 h-10 rounded-xl bg-gold-500/15 border border-gold-400/40 flex items-center justify-center text-gold-300 shrink-0 mt-0.5">
+                    <div className="absolute inset-0 rounded-xl border border-gold-400/60 animate-radar-ping pointer-events-none" />
+                    <MapPin size={18} className="relative z-10" />
                   </div>
                   <div>
                     <span className="text-[10px] uppercase font-cinzel tracking-wider text-gold-400 font-semibold block">

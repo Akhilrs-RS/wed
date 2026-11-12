@@ -1,5 +1,5 @@
 import React from 'react';
-import { GlassWater, Users, Music2, UtensilsCrossed, Sparkles } from 'lucide-react';
+import { GlassWater, Users, Music2, UtensilsCrossed } from 'lucide-react';
 import { weddingData } from '../../../data/weddingData';
 import ScrollReveal from '../../common/ScrollReveal';
 
@@ -34,19 +34,27 @@ export default function V2Program() {
           </div>
         </ScrollReveal>
 
-        {/* 4-Stage Horizontal Card Deck */}
+        {/* Cinematic Golden Energy Conduit Beam */}
+        <div className="hidden lg:block relative mb-8 mx-6 h-0.5 bg-white/10 overflow-hidden rounded-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-400 to-transparent w-1/3 animate-energy-pulse" />
+        </div>
+
+        {/* 4-Stage Horizontal Card Deck with Sequential Spotlight Illumination */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
           {schedule.map((item, index) => (
-            <ScrollReveal key={item.title} animation="fade-up" delay={index * 120}>
-              <div className="group relative p-7 rounded-3xl bg-[#12121B]/90 hover:bg-[#181824] border border-white/10 hover:border-gold-400/60 shadow-[0_15px_40px_rgba(0,0,0,0.7)] backdrop-blur-xl transition-all duration-500 hover:scale-[1.03] flex flex-col justify-between h-full">
+            <ScrollReveal key={item.title} animation="fade-up" delay={index * 130}>
+              <div className="group relative p-7 rounded-3xl bg-[#12121B]/90 hover:bg-[#181824] border border-white/10 hover:border-gold-400/60 shadow-[0_15px_40px_rgba(0,0,0,0.7)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(212,175,55,0.22)] flex flex-col justify-between h-full">
                 
+                {/* Ambient Spotlight Halo */}
+                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-b from-gold-500/0 via-gold-400/0 to-gold-500/0 group-hover:from-gold-500/20 group-hover:via-amber-400/10 group-hover:to-transparent blur-xl transition-all duration-700 pointer-events-none" />
+
                 {/* Header Node: Phase Number + Icon */}
-                <div>
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-5">
-                    <span className="font-cinzel text-2xl font-bold text-white/30 group-hover:text-gold-400/80 transition-colors">
+                    <span className="font-cinzel text-2xl font-bold text-white/30 group-hover:text-gold-300 transition-colors drop-shadow-sm">
                       0{index + 1}
                     </span>
-                    <div className="w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform shadow-inner">
+                    <div className="w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:border-gold-400/50 group-hover:bg-gold-500/10 transition-all duration-300 shadow-inner">
                       {icons[index % icons.length]}
                     </div>
                   </div>
@@ -56,7 +64,7 @@ export default function V2Program() {
                     <span className="font-cinzel text-lg font-bold text-gold-300">
                       {item.time}
                     </span>
-                    <span className="px-2.5 py-0.5 rounded-full text-[8.5px] font-cinzel tracking-widest uppercase bg-gold-500/15 text-gold-200 border border-gold-400/30 font-semibold">
+                    <span className="px-2.5 py-0.5 rounded-full text-[8.5px] font-cinzel tracking-widest uppercase bg-gold-500/15 text-gold-200 border border-gold-400/30 font-semibold group-hover:border-gold-400/60 transition-colors">
                       {item.badge}
                     </span>
                   </div>
@@ -71,9 +79,9 @@ export default function V2Program() {
                 </div>
 
                 {/* Bottom Gold Accent Bar */}
-                <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-[10px] font-cinzel tracking-wider text-stone-400 group-hover:text-gold-300 transition-colors">
+                <div className="relative z-10 pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-[10px] font-cinzel tracking-wider text-stone-400 group-hover:text-gold-300 transition-colors">
                   <span>EVENING PHASE {index + 1}</span>
-                  <span className="w-8 h-px bg-gold-400/40 group-hover:w-12 transition-all" />
+                  <span className="w-8 h-px bg-gold-400/40 group-hover:w-14 group-hover:bg-gold-400 transition-all" />
                 </div>
               </div>
             </ScrollReveal>

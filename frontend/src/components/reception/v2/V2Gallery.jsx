@@ -55,7 +55,7 @@ export default function V2Gallery() {
               >
                 <div
                   onClick={() => setActiveIndex(idx)}
-                  className={`group relative rounded-3xl overflow-hidden bg-black/50 border border-white/10 hover:border-gold-400/60 shadow-xl cursor-pointer transform transition-all duration-700 hover:scale-[1.02] active:scale-[0.98] ${
+                  className={`group relative rounded-3xl overflow-hidden bg-black/50 border border-white/10 hover:border-gold-400/60 shadow-xl cursor-pointer transform transition-all duration-700 hover:scale-[1.025] hover:shadow-[0_20px_50px_rgba(212,175,55,0.2)] active:scale-[0.98] ${
                     isWide ? 'h-[360px] sm:h-[480px]' : 'h-[180px] sm:h-[230px]'
                   }`}
                   title={`View ${item.caption}`}
@@ -68,16 +68,22 @@ export default function V2Gallery() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
 
+                  {/* Director's Viewfinder Editorial Crop Marks */}
+                  <span className="viewfinder-bracket viewfinder-tl" />
+                  <span className="viewfinder-bracket viewfinder-tr" />
+                  <span className="viewfinder-bracket viewfinder-bl" />
+                  <span className="viewfinder-bracket viewfinder-br" />
+
                   {/* Top-Right Expand Icon */}
-                  <div className="absolute top-3.5 right-3.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="w-8 h-8 rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center justify-center text-gold-300">
+                  <div className="absolute top-3.5 right-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0 translate-x-2">
+                    <span className="w-8 h-8 rounded-full bg-black/75 backdrop-blur-md border border-white/20 flex items-center justify-center text-gold-300 shadow-lg">
                       <Maximize2 size={13} />
                     </span>
                   </div>
 
                   {/* Caption on Image */}
-                  <div className="absolute bottom-3.5 inset-x-3.5 text-left">
-                    <h4 className="font-cinzel text-xs sm:text-sm font-semibold text-white truncate">
+                  <div className="absolute bottom-3.5 inset-x-3.5 text-left transform transition-transform duration-300 group-hover:translate-y-[-2px]">
+                    <h4 className="font-cinzel text-xs sm:text-sm font-semibold text-white truncate drop-shadow">
                       {item.caption}
                     </h4>
                     <p className="text-[10px] font-sans text-gold-300/90 truncate">

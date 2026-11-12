@@ -53,12 +53,25 @@ export default function V2RSVP() {
     setHasToasted(true);
     try {
       localStorage.setItem('rb_v2_toasts', String(newCount));
+      // Cinematic multi-stage champagne bubble fountain burst
       confetti({
-        particleCount: 85,
-        spread: 100,
-        origin: { y: 0.75 },
-        colors: ['#D4AF37', '#FAF6F0', '#E5C578', '#E11D48', '#FFD700']
+        particleCount: 70,
+        spread: 90,
+        origin: { y: 0.72 },
+        colors: ['#D4AF37', '#FAF6F0', '#E5C578', '#FFD700'],
+        ticks: 200,
+        gravity: 0.8
       });
+      setTimeout(() => {
+        confetti({
+          particleCount: 45,
+          spread: 120,
+          origin: { y: 0.7 },
+          colors: ['#F5D061', '#E11D48', '#FFFFFF'],
+          scalar: 0.9,
+          ticks: 180
+        });
+      }, 150);
     } catch (e) {
       console.log('Toast error:', e);
     }
@@ -139,7 +152,10 @@ export default function V2RSVP() {
                 LIVE GUEST TOAST COUNTER
               </span>
               <h3 className="font-cinzel text-2xl sm:text-4xl text-white font-medium">
-                <span className="text-gold-300 font-bold">{toastCount}</span> Virtual Champagne Toasts
+                <span className={`text-gold-300 font-bold inline-block ${hasToasted ? 'animate-digit-tick' : ''}`}>
+                  {toastCount}
+                </span>{' '}
+                Virtual Champagne Toasts
               </h3>
               <p className="text-xs text-stone-300 font-sans">
                 Join our friends and family worldwide in raising a glass to the newlyweds!

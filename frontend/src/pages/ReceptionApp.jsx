@@ -61,6 +61,16 @@ export default function ReceptionApp() {
         onClose={() => setShowInvitationModal(false)}
       />
 
+      {/* Cinematic Letterbox Opening Curtain (Top & Bottom Exit Bars) */}
+      <div className="fixed top-0 inset-x-0 h-8 sm:h-14 bg-black z-50 pointer-events-none animate-letterbox-top shadow-2xl" />
+      <div className="fixed bottom-0 inset-x-0 h-8 sm:h-14 bg-black z-50 pointer-events-none animate-letterbox-bottom shadow-2xl" />
+
+      {/* Anamorphic Golden Cinema Lens Flare Sweep */}
+      <div className="fixed top-0 inset-x-0 h-44 pointer-events-none z-20 overflow-hidden select-none">
+        <div className="w-[140vw] h-1.5 -top-1 absolute bg-gradient-to-r from-transparent via-gold-300/40 to-transparent blur-md animate-lens-flare" />
+        <div className="w-[90vw] h-12 -top-5 absolute bg-gradient-to-r from-transparent via-amber-400/15 to-transparent blur-2xl animate-lens-flare" />
+      </div>
+
       {/* Atmospheric Starlight Canvas Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 inset-x-0 h-[650px] bg-gradient-to-b from-amber-500/10 via-transparent to-transparent opacity-30 blur-3xl" />

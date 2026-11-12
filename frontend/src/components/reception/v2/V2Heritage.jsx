@@ -33,10 +33,13 @@ export default function V2Heritage() {
               BRIDE'S LINEAGE TABLET (Hosts in Punniyam, Kanyakumari)
              =================================================================== */}
           <ScrollReveal animation="fade-left" delay={150}>
-            <div className="relative p-8 sm:p-11 rounded-3xl bg-[#12121B]/90 border border-white/10 hover:border-gold-400/50 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.015] flex flex-col justify-between h-full group">
+            <div className="relative p-8 sm:p-11 rounded-3xl bg-[#12121B]/90 border border-white/10 hover:border-gold-400/60 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_25px_60px_rgba(212,175,55,0.18)] flex flex-col justify-between h-full group overflow-hidden">
               
-              {/* Top Medallion B */}
-              <div className="flex items-center justify-between pb-6 border-b border-white/10">
+              {/* Subtle ambient silk light sweep on hover */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/0 via-gold-400/0 to-gold-500/0 group-hover:from-gold-500/10 group-hover:via-transparent group-hover:to-gold-500/5 transition-all duration-700 pointer-events-none" />
+
+              {/* Top Medallion B with Concentric Ripple Glow */}
+              <div className="relative z-10 flex items-center justify-between pb-6 border-b border-white/10">
                 <div>
                   <span className="text-[10px] font-cinzel tracking-[0.25em] uppercase text-gold-400 font-semibold block">
                     BRIDE'S HOUSE
@@ -45,8 +48,8 @@ export default function V2Heritage() {
                     Punniyam, Kanyakumari, Tamil Nadu
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center group-hover:scale-105 transition-transform shadow-inner">
-                  <span className="font-cinzel text-lg font-bold text-gold-300">B</span>
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-gold-400/40 flex items-center justify-center animate-ripple-crest group-hover:scale-110 transition-transform shadow-inner">
+                  <span className="font-cinzel text-lg font-bold text-gold-300 drop-shadow">B</span>
                 </div>
               </div>
 
@@ -93,10 +96,13 @@ export default function V2Heritage() {
               GROOM'S LINEAGE TABLET (Welcoming Family from Kerala)
              =================================================================== */}
           <ScrollReveal animation="fade-right" delay={300}>
-            <div className="relative p-8 sm:p-11 rounded-3xl bg-[#12121B]/90 border border-white/10 hover:border-gold-400/50 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.015] flex flex-col justify-between h-full group">
+            <div className="relative p-8 sm:p-11 rounded-3xl bg-[#12121B]/90 border border-white/10 hover:border-gold-400/60 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_25px_60px_rgba(212,175,55,0.18)] flex flex-col justify-between h-full group overflow-hidden">
               
-              {/* Top Medallion R */}
-              <div className="flex items-center justify-between pb-6 border-b border-white/10">
+              {/* Subtle ambient silk light sweep on hover */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/0 via-gold-400/0 to-gold-500/0 group-hover:from-gold-500/10 group-hover:via-transparent group-hover:to-gold-500/5 transition-all duration-700 pointer-events-none" />
+
+              {/* Top Medallion R with Concentric Ripple Glow */}
+              <div className="relative z-10 flex items-center justify-between pb-6 border-b border-white/10">
                 <div>
                   <span className="text-[10px] font-cinzel tracking-[0.25em] uppercase text-gold-400 font-semibold block">
                     GROOM'S HOUSE
@@ -105,8 +111,8 @@ export default function V2Heritage() {
                     Kottarakara, Kollam, Kerala
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center group-hover:scale-105 transition-transform shadow-inner">
-                  <span className="font-cinzel text-lg font-bold text-gold-300">R</span>
+                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-gold-400/40 flex items-center justify-center animate-ripple-crest group-hover:scale-110 transition-transform shadow-inner">
+                  <span className="font-cinzel text-lg font-bold text-gold-300 drop-shadow">R</span>
                 </div>
               </div>
 
